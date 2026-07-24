@@ -615,9 +615,16 @@ code {
 .upcoming-categories span { display: block; }
 .upcoming-categories b { color: var(--ink); font-size: 13px; }
 .upcoming-categories span { margin-top: 2px; color: var(--muted); font-size: 10px; }
-.resource-list { display: grid; gap: 18px; }
-.resource-card { padding: 30px 32px; border: 1px solid var(--blue-line); scroll-margin-top: 24px; }
+.resource-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+.resource-card {
+  width: 100%;
+  min-width: 0;
+  padding: 30px 32px;
+  border: 1px solid var(--blue-line);
+  scroll-margin-top: 24px;
+}
 .resource-card > header { display: grid; grid-template-columns: 40px 1fr; gap: 15px; }
+.resource-card > header > div { min-width: 0; }
 .resource-card > header > span { color: var(--blue); font-family: Georgia, serif; font-size: 12px; }
 .resource-card h2 { margin: 0; color: var(--ink); font-family: var(--serif); font-size: 24px; }
 .resource-card header p { margin: 6px 0 0; color: var(--muted); font-size: 13px; }
