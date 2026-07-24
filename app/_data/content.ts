@@ -23,7 +23,7 @@ export const categories = [
   {
     id: "voice",
     title: "文章を作り込む",
-    description: "説明書のような文章から、本人の言葉を取り戻します。",
+    description: "説明書のような文章から、書き手の言葉を取り戻します。",
     chapters: "第3章",
   },
   {
@@ -122,7 +122,7 @@ export const downloads = [
     description: "原稿に足りない体験、感情、判断理由を引き出す依頼文です。",
     file: "03-reverse-questions.md",
     downloadName: "03_AIからの逆質問.md",
-    timing: "構成や初稿に本人の材料が足りないとき",
+    timing: "構成や初稿に書き手自身の材料が足りないとき",
     editing: "原稿と一緒に渡して使用",
     related: "長文原稿を1冊仕上げる現在の方法",
     relatedHref: "/library/longform-with-codex#questions",

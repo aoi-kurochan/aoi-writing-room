@@ -23,7 +23,7 @@ export default function LongformWithCodex() {
           <div className="article-summary">
             <p>
               AIに「本を書いて」と頼むだけでは、
-              書き手本人の経験や判断が残った原稿にはなりにくいです。
+              書き手自身の経験や判断が残った原稿にはなりにくいです。
             </p>
             <p>
               私は現在、音声で材料を出し、AIに足りない材料を質問で引き出してもらい、
@@ -75,7 +75,7 @@ export default function LongformWithCodex() {
             <li><span>05</span><div><b>不足を聞き返してもらう</b><p>AIの逆質問へ音声で答え、体験を足す。</p></div></li>
             <li><span>06</span><div><b>全体をつなぐ</b><p>重複、時系列、章同士の論理を整える。</p></div></li>
             <li><span>07</span><div><b>並行レビューする</b><p>複数AIへ、同じ原稿と同じ条件を渡す。</p></div></li>
-            <li><span>08</span><div><b>本人が決める</b><p>提案を採用するか、最後に自分で判断する。</p></div></li>
+            <li><span>08</span><div><b>自分で決める</b><p>提案を採用するか、最後に自分で判断する。</p></div></li>
           </ol>
           <aside className="note-box">
             <b>応用：画像制作は別タスクで進める</b>
@@ -87,7 +87,7 @@ export default function LongformWithCodex() {
         </section>
 
         <section id="change">
-          <h2><span>1</span>なぜ今はCodexを中心に使うのか</h2>
+          <h2>なぜ今はCodexを中心に使うのか</h2>
           <p>
             現時点では、長い原稿制作はCodexが一番進めやすいと感じています。
             理由は、会話が上手だからだけではありません。原稿、執筆ルール、構成メモなど、
@@ -113,7 +113,7 @@ export default function LongformWithCodex() {
         </section>
 
         <section id="voice">
-          <h2><span>2</span>5分の音声ダンプで材料を出す</h2>
+          <h2>5分の音声ダンプで材料を出す</h2>
           <p>
             今の私は、背景や感情を長く伝えるとき、ほとんどタイピングしていません。
             Macのデスクトップ版Codexで入力欄を選び、音声入力を始め、そのまま話します。
@@ -159,7 +159,7 @@ export default function LongformWithCodex() {
         </section>
 
         <section id="questions">
-          <h2><span>3</span>AIに逆質問してもらう</h2>
+          <h2>AIに逆質問してもらう</h2>
           <p>
             『初めてのBrainが100万円売れた私の話』は、約2万4,400字の原稿ができた段階で、
             実際に何をしたのか、何が怖かったのか、なぜその判断をしたのかが薄いと感じました。
@@ -205,7 +205,7 @@ export default function LongformWithCodex() {
         </section>
 
         <section id="case-study">
-          <h2><span>4</span>1冊の実例で、材料が本文になるまでを見る</h2>
+          <h2>1冊の実例で、材料が本文になるまでを見る</h2>
           <p>
             ここからは、実際に残っている音声回答、AIが整理した改稿指示、完成原稿を順番に見ます。
             言葉を後から「それらしく」作った例ではありません。
@@ -262,13 +262,13 @@ export default function LongformWithCodex() {
             <div>
               <p className="artifact-label">音声回答後の章</p>
               <h3>私が考える、売れるBrainの作り方</h3>
-              <p>攻略法ではなく、本人が実際にしたことから判断基準を抽出しました。</p>
+              <p>攻略法ではなく、著者が実際にしたことから判断基準を抽出しました。</p>
             </div>
           </div>
         </section>
 
         <section id="markdown">
-          <h2><span>5</span>2種類のMarkdownで、前提を残す</h2>
+          <h2>2種類のMarkdownで、前提を残す</h2>
           <p>
             Markdownは、見出しや箇条書きを簡単な記号で整理できるテキスト形式です。
             ファイル名の末尾は<code>.md</code>。装飾が少なく、AIが読みやすいのが利点です。
@@ -307,7 +307,7 @@ export default function LongformWithCodex() {
         </section>
 
         <section id="handoff">
-          <h2><span>6</span>長くなったら、執筆チャットを分ける</h2>
+          <h2>長くなったら、執筆チャットを分ける</h2>
           <p>
             構成や材料の議論が長くなったあと、そのまま本文まで書き続けると、
             どれが確定事項で、どれが途中案なのか分かりにくくなります。
@@ -328,10 +328,11 @@ export default function LongformWithCodex() {
         </section>
 
         <section id="parallel-review">
-          <h2><span>7</span>複数AIを並行してレビューする</h2>
+          <h2>複数AIを並行してレビューする</h2>
           <p>
             1つのAIと長く話していると、前提をよく知ってくれる反面、同じ方向へ寄りやすくなります。
-            ChatGPT、Claude、第三者AIへ同じ原稿を渡し、同じ基準で読んでもらいました。
+            ChatGPT、Claudeと、私が実際に使っている第三者AIへ同じ原稿を渡し、
+            同じ基準で読んでもらいました。
             すべての意見が揃うまで、本文は修正しません。
           </p>
           <div className="review-levels">
@@ -389,13 +390,13 @@ export default function LongformWithCodex() {
             <b>「読みやすくして」とだけ頼むと、無難な文章へ寄ることがあります</b>
             <p>
               読みやすくする修正と、著者の個性を消す修正は別です。
-              本人の自然な反応まで、効率だけで削らないようにします。
+              書き手の自然な反応まで、効率だけで削らないようにします。
             </p>
           </aside>
         </section>
 
         <section id="last-word">
-          <h2><span>8</span>最後に決めるのは、自分</h2>
+          <h2>最後に決めるのは、自分</h2>
           <p>
             AIへ任せられる範囲は、かなり広がりました。材料を整理する。足りないことを聞く。
             原稿を書く。別の角度からレビューする。意見を統合する。ここまではAIに頼めます。
