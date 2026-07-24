@@ -41,7 +41,7 @@ const Example = ({
       <div>{after}</div>
     </div>
     <aside className="lesson-box">
-      <b>この例から使い回せる判断</b>
+      <b>ほかの原稿で応用するなら</b>
       <div>{lesson}</div>
     </aside>
   </section>
@@ -70,14 +70,14 @@ export default function AiVoiceBeforeAfter() {
           </p>
           <p className="article-summary">
             私が「AIっぽい」と感じるのは、語尾が整っている文章ではありません。
-            本人が経験していないことを補い、迷いを消し、どこかで見た結論へ滑らかに着地する文章です。
+            書き手が経験していないことを補い、迷いを消し、どこかで見た結論へ滑らかに着地する文章です。
             ここでは、実際のログと完成稿を並べ、何を変えたのかを見せます。
           </p>
           <dl className="article-facts">
             <div><dt>題材</dt><dd>『初めてのBrainが100万円売れた私の話』</dd></div>
             <div>
               <dt>見せるもの</dt>
-              <dd>AIの案、本人の返答、音声材料、完成稿のうち、各判断を確認できる資料</dd>
+              <dd>AIの案、私の返答、音声材料、完成稿のうち、各判断を確認できる資料</dd>
             </div>
             <div><dt>関連する本編</dt><dd>本編の{article.chapters}「AIライティングは作り込みが超重要」</dd></div>
           </dl>
@@ -88,7 +88,7 @@ export default function AiVoiceBeforeAfter() {
           <p>
             AIが書いた文章すべてを否定する言葉ではありません。
             事実を順番に並べただけの説明、比較対象のない「も」、
-            本人が判断していない内容の補足、成功だけを滑らかにつないだ文章。
+            書き手が判断していない内容の補足、成功だけを滑らかにつないだ文章。
             そうした「著者が見えなくなった状態」を、この記事ではAIっぽさと呼びます。
           </p>
           <p>
@@ -220,7 +220,7 @@ export default function AiVoiceBeforeAfter() {
           lesson={
             <p>
               成果の数字だけを書かない。比べる基準がなかったこと、止まった時間、
-              そのときに出た本人の言葉まで残す。
+              そのときに出た言葉まで残す。
             </p>
           }
         />
@@ -289,11 +289,11 @@ export default function AiVoiceBeforeAfter() {
             <div>
               <h3>著者の事実と個性</h3>
               <ul>
-                <li>本人が判断していないことを勝手に補っていないか</li>
+                <li>書き手が判断していないことを勝手に補っていないか</li>
                 <li>成功だけを滑らかに並べていないか</li>
                 <li>読みやすさのために、個性まで削っていないか</li>
                 <li>迷い、言い直し、反省が全部消えていないか</li>
-                <li>外部情報を本人の経験として書いていないか</li>
+                <li>外部情報を書き手の経験として書いていないか</li>
               </ul>
             </div>
           </div>
@@ -302,7 +302,7 @@ export default function AiVoiceBeforeAfter() {
         <section className="case-conclusion">
           <h2>AIっぽさを消すのは、最後の言い換えではありません</h2>
           <p>
-            一番大きいのは、AIへ渡す材料です。本人が何を経験したのか。
+            一番大きいのは、AIへ渡す材料です。書き手が何を経験したのか。
             どこで怖かったのか。最初の案へ、なぜ「違う」と思ったのか。
             そこまで渡さなければ、AIは平均的にきれいな文章を作ります。
           </p>

@@ -4,7 +4,11 @@ import test from "node:test";
 
 async function render(path = "/") {
   const relativePath =
-    path === "/" ? "../dist/client/index.html" : `../dist/client${path}/index.html`;
+    path === "/"
+      ? "../out/index.html"
+      : path.endsWith(".txt")
+        ? `../out${path}`
+        : `../out${path}/index.html`;
   const html = await readFile(new URL(relativePath, import.meta.url), "utf8");
   return new Response(html, {
     status: 200,
@@ -16,7 +20,7 @@ for (const [path, expected] of [
   ["/", "あおい執筆室"],
   ["/library", "追加実践記事を、制作工程から探す"],
   ["/resources", "原稿制作で使えるテンプレート"],
-  ["/library/longform-with-codex", "長文原稿を1冊仕上げる現在の方法"],
+  ["/library/longform-with-codex", "AIで長文原稿を1冊仕上げる、現在の制作フロー"],
   ["/library/ai-voice-before-after", "あおいの原稿ビフォー・アフター"],
 ]) {
   test(`server-renders ${path}`, async () => {
@@ -28,12 +32,14 @@ for (const [path, expected] of [
 }
 
 test("keeps search exclusion and purchaser notice", async () => {
-  const response = await render("/");
-  const html = await response.text();
+  const [response, robotsResponse] = await Promise.all([render("/"), render("/robots.txt")]);
+  const [html, robots] = await Promise.all([response.text(), robotsResponse.text()]);
   assert.match(html, /noindex/);
   assert.match(html, /nofollow/);
   assert.match(html, /購入者限定/);
   assert.match(html, /第三者へ共有すること/);
+  assert.match(robots, /Allow: \//);
+  assert.doesNotMatch(robots, /Disallow: \//);
 });
 
 test("embeds all seven downloads without public raw-file URLs", async () => {
@@ -77,9 +83,10 @@ test("keeps the approved update framing and direct reading links", async () => {
 
   assert.match(html, /購入者限定・本編アップデート/);
   assert.match(html, /毎月25万円の印税が振り込まれるまでにやったこと、全部書きました/);
-  assert.match(html, /href="\/library\/longform-with-codex#workflow-overview"/);
-  assert.match(html, /href="\/library\/ai-voice-before-after#examples"/);
-  assert.match(html, /href="\/resources#resource-06"/);
+  assert.match(html, /AIで長文原稿を1冊仕上げる、現在の制作フロー/);
+  assert.match(html, /href="\/library\/longform-with-codex\/?#workflow-overview"/);
+  assert.match(html, /href="\/library\/ai-voice-before-after\/?#examples"/);
+  assert.match(html, /href="\/resources\/?#resource-06"/);
   assert.doesNotMatch(html, /迷ったら、この順番で進んでください/);
 });
 

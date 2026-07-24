@@ -51,7 +51,7 @@ export const articles = [
     number: "01",
     slug: "longform-with-codex",
     href: "/library/longform-with-codex",
-    title: "Codexを中心に、長文原稿を1冊仕上げる現在の方法",
+    title: "AIで長文原稿を1冊仕上げる、現在の制作フロー",
     summary:
       "音声入力、AIからの逆質問、2種類のMarkdown、チャットの引き継ぎ、複数AIのレビューを、私が今どの順番で使っているのかを、1冊分の実例とともに紹介します。",
     originLabel: "購入者アンケートを反映",
@@ -60,7 +60,7 @@ export const articles = [
     tags: ["企画・素材を固める", "編集・レビューする"],
     chapters: "第3章〜第5章",
     verified: "2026年7月",
-    environment: "Mac／Codex／Web版ChatGPT／Claude",
+    environment: "Mac／Codexデスクトップアプリ／Web版ChatGPT／Claude",
     status: "現在も使用中",
   },
   {
@@ -175,8 +175,8 @@ export const downloads = [
     downloadName: "06_出版前チェック.md",
     timing: "KDPへ登録する直前",
     editing: "チェックしながら使用",
-    related: "すべての記事",
-    relatedHref: "/library",
+    related: "出版前・KDPの工程",
+    relatedHref: "/library#publish",
     version: "v1.1",
     steps: [
       "KDPへ登録する直前に、一覧を上から確認する。",

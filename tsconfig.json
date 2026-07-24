@@ -35,6 +35,7 @@
     "db",
     "drizzle",
     "examples",
-    "worker"
+    "worker",
+    "build"
   ]
 }
