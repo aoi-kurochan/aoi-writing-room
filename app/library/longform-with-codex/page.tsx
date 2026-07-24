@@ -20,14 +20,28 @@ export default function LongformWithCodex() {
         <header className="article-header">
           <p className="article-kicker">{article.primaryCategory}</p>
           <h1>{article.title}</h1>
-          <p className="article-summary">
-            AIへ「本を書いて」と頼むだけでは、あおいの本にはなりません。
-            音声で材料を出し、足りないことを質問してもらい、判断をファイルへ残す。
-            ここでは、実際の質問、音声回答、改稿指示、複数AIのレビューまで、現在の流れをつなげます。
+          <div className="article-summary">
+            <p>
+              AIに「本を書いて」と頼むだけでは、
+              書き手本人の経験や判断が残った原稿にはなりにくいです。
+            </p>
+            <p>
+              私は現在、音声で材料を出し、AIに足りない材料を質問で引き出してもらい、
+              原稿ごとのルールをファイルへ残しながら、長文原稿を作っています。
+            </p>
+            <p>
+              この記事では、実際の質問、音声回答、改稿指示、複数AIのレビューまで、
+              私が1冊を仕上げる流れを具体的に紹介します。
+            </p>
+          </div>
+          <p className="article-context">
+            この内容は、本編の第3章〜第5章を補足する追加実践記事です。
+            購入者アンケートでは、長文原稿を作る際のAIの使い分けを詳しく知りたい、
+            という声を多くいただきました。私が出版を続ける中で変わった制作フローも反映しています。
           </p>
           <dl className="article-facts">
             <div><dt>題材</dt><dd>『初めてのBrainが100万円売れた私の話』</dd></div>
-            <div><dt>関連する本編</dt><dd>{article.chapters}</dd></div>
+            <div><dt>関連する本編</dt><dd>本編の{article.chapters}</dd></div>
             <div><dt>検証環境</dt><dd>{article.environment}</dd></div>
           </dl>
         </header>
@@ -35,17 +49,42 @@ export default function LongformWithCodex() {
         <details className="toc" open>
           <summary>この記事の目次</summary>
           <ol>
+            <li><a href="#workflow-overview">まず、1冊を仕上げる8工程を確認する</a></li>
             <li><a href="#change">なぜ今はCodexを中心に使うのか</a></li>
             <li><a href="#voice">5分の音声ダンプで材料を出す</a></li>
             <li><a href="#questions">AIに逆質問してもらう</a></li>
             <li><a href="#case-study">1冊の実例で、材料が本文になるまでを見る</a></li>
             <li><a href="#markdown">2種類のMarkdownで前提を残す</a></li>
             <li><a href="#handoff">長くなったら、執筆チャットを分ける</a></li>
-            <li><a href="#workflow">1冊を仕上げる現在の流れ</a></li>
             <li><a href="#parallel-review">複数AIを並行してレビューする</a></li>
             <li><a href="#last-word">最後に決めるのは、自分</a></li>
           </ol>
         </details>
+
+        <section id="workflow-overview">
+          <h2>まず、1冊を仕上げる8工程を確認する</h2>
+          <p>
+            私の現在の環境では、Codexを中心に使っています。
+            詳細へ入る前に、材料を出してから公開前に自分で判断するまでの流れを確認します。
+          </p>
+          <ol className="timeline">
+            <li><span>01</span><div><b>材料を出す</b><p>経験、読者、伝えたいことを音声で話す。</p></div></li>
+            <li><span>02</span><div><b>ルールを置く</b><p>共通ルールと、本書だけのルールを用意する。</p></div></li>
+            <li><span>03</span><div><b>構成を決める</b><p>章の役割と順番を固定する。</p></div></li>
+            <li><span>04</span><div><b>本文を書く</b><p>必要な材料を見ながら、章ごとに書く。</p></div></li>
+            <li><span>05</span><div><b>不足を聞き返してもらう</b><p>AIの逆質問へ音声で答え、体験を足す。</p></div></li>
+            <li><span>06</span><div><b>全体をつなぐ</b><p>重複、時系列、章同士の論理を整える。</p></div></li>
+            <li><span>07</span><div><b>並行レビューする</b><p>複数AIへ、同じ原稿と同じ条件を渡す。</p></div></li>
+            <li><span>08</span><div><b>本人が決める</b><p>提案を採用するか、最後に自分で判断する。</p></div></li>
+          </ol>
+          <aside className="note-box">
+            <b>応用：画像制作は別タスクで進める</b>
+            <p>
+              出版まで時間がないときは、本文とは別のCodexタスクで表紙や挿絵を進めることがあります。
+              最初から全部を同時進行する必要はありません。原稿制作に慣れてから使う小技です。
+            </p>
+          </aside>
+        </section>
 
         <section id="change">
           <h2><span>1</span>なぜ今はCodexを中心に使うのか</h2>
@@ -288,33 +327,11 @@ export default function LongformWithCodex() {
           </Link>
         </section>
 
-        <section id="workflow">
-          <h2><span>7</span>1冊を仕上げる、現在の流れ</h2>
-          <ol className="timeline">
-            <li><span>01</span><div><b>材料を出す</b><p>経験、読者、伝えたいことを音声で話す。</p></div></li>
-            <li><span>02</span><div><b>ルールを置く</b><p>共通ルールと、本書だけのルールを用意する。</p></div></li>
-            <li><span>03</span><div><b>構成を決める</b><p>章の役割と順番を固定する。</p></div></li>
-            <li><span>04</span><div><b>本文を書く</b><p>必要な材料を見ながら、章ごとに書く。</p></div></li>
-            <li><span>05</span><div><b>不足を聞き返してもらう</b><p>AIの逆質問へ音声で答え、体験を足す。</p></div></li>
-            <li><span>06</span><div><b>全体をつなぐ</b><p>重複、時系列、章同士の論理を整える。</p></div></li>
-            <li><span>07</span><div><b>並行レビューする</b><p>複数AIへ、同じ原稿と同じ条件を渡す。</p></div></li>
-            <li><span>08</span><div><b>本人が決める</b><p>提案を採用するか、最後に自分で判断する。</p></div></li>
-          </ol>
-          <aside className="note-box">
-            <b>応用：画像制作は別タスクで進める</b>
-            <p>
-              出版まで時間がないときは、本文とは別のCodexタスクで表紙や挿絵を進めることがあります。
-              最初から全部を同時進行する必要はありません。原稿制作に慣れてから使う小技です。
-            </p>
-          </aside>
-        </section>
-
         <section id="parallel-review">
-          <h2><span>8</span>複数AIを並行してレビューする</h2>
+          <h2><span>7</span>複数AIを並行してレビューする</h2>
           <p>
             1つのAIと長く話していると、前提をよく知ってくれる反面、同じ方向へ寄りやすくなります。
-            完成に近い同じ原稿を、新しいChatGPT、Claude、第三者AIなどのチャットへ渡し、
-            同じ基準で読んでもらいます。
+            ChatGPT、Claude、第三者AIへ同じ原稿を渡し、同じ基準で読んでもらいました。
             すべての意見が揃うまで、本文は修正しません。
           </p>
           <div className="review-levels">
@@ -378,7 +395,7 @@ export default function LongformWithCodex() {
         </section>
 
         <section id="last-word">
-          <h2><span>9</span>最後に決めるのは、自分</h2>
+          <h2><span>8</span>最後に決めるのは、自分</h2>
           <p>
             AIへ任せられる範囲は、かなり広がりました。材料を整理する。足りないことを聞く。
             原稿を書く。別の角度からレビューする。意見を統合する。ここまではAIに頼めます。

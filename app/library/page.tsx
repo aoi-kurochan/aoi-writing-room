@@ -20,11 +20,15 @@ export default function Library() {
           <span>記事一覧</span>
         </nav>
         <header className="index-header">
-          <p className="article-kicker">記事一覧</p>
-          <h1>原稿制作の工程から探す</h1>
+          <p className="article-kicker">購入者向けライブラリ</p>
+          <h1>追加実践記事を、制作工程から探す</h1>
+          <p>
+            購入者アンケートで要望の多かった内容と、私の実践方法が変わった部分を、
+            追加実践記事としてまとめています。
+          </p>
           <p>
             記事は月別ではなく、1冊を作る工程ごとに整理しています。
-            1つの記事に複数の工程が含まれる場合は、中心となる工程へ置き、関連タグを添えています。
+            本編の関連章を確認し、今知りたい内容からお選びください。
           </p>
         </header>
 
@@ -35,7 +39,7 @@ export default function Library() {
               <section id={category.id} className="library-category" key={category.id}>
                 <header>
                   <div>
-                    <p>本編 {category.chapters}</p>
+                    <p>本編の{category.chapters}</p>
                     <h2>{category.title}</h2>
                   </div>
                   <span>{matched.length}記事</span>
@@ -49,7 +53,7 @@ export default function Library() {
                         <h3>{article.title}</h3>
                         <p>{article.summary}</p>
                         <small>
-                          主分類：{article.primaryCategory}／関連：{article.tags.join("・")}
+                          {article.originLabel}／主分類：{article.primaryCategory}／関連：{article.tags.join("・")}
                         </small>
                       </div>
                       <b aria-hidden="true">→</b>
@@ -67,7 +71,7 @@ export default function Library() {
               {upcomingCategories.map((category) => (
                 <div id={category.id} key={category.id}>
                   <b>{category.title}</b>
-                  <span>本編 {category.chapters}</span>
+                  <span>本編の{category.chapters}</span>
                 </div>
               ))}
             </div>

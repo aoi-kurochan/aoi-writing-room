@@ -1,3 +1,6 @@
+export const productTitle =
+  "毎月25万円の印税が振り込まれるまでにやったこと、全部書きました";
+
 export const categories = [
   {
     id: "planning",
@@ -50,7 +53,8 @@ export const articles = [
     href: "/library/longform-with-codex",
     title: "Codexを中心に、長文原稿を1冊仕上げる現在の方法",
     summary:
-      "音声ダンプ、AIからの逆質問、2種類のMarkdown、チャットの引き継ぎ、複数AIの並行レビューまで。実際の質問・回答・採否を見ながら進めます。",
+      "音声入力、AIからの逆質問、2種類のMarkdown、チャットの引き継ぎ、複数AIのレビューを、私が今どの順番で使っているのかを、1冊分の実例とともに紹介します。",
+    originLabel: "購入者アンケートを反映",
     primaryCategory: "本文を書く",
     categoryId: "drafting",
     tags: ["企画・素材を固める", "編集・レビューする"],
@@ -65,7 +69,8 @@ export const articles = [
     href: "/library/ai-voice-before-after",
     title: "AIっぽさを消す、あおいの原稿ビフォー・アフター",
     summary:
-      "AIの提案、あおいの生の返答、完成稿を照合。何を消し、何を残したのかを、保存された制作資料で確認できる実例だけで公開します。",
+      "AIの案、私が感じた違和感、追加した材料、完成稿を並べ、何を直し、何を残したのか、その判断基準を公開します。",
+    originLabel: "購入者アンケートを反映",
     primaryCategory: "文章を作り込む",
     categoryId: "voice",
     tags: ["本文を書く", "編集・レビューする"],
@@ -82,6 +87,7 @@ export const downloads = [
     title: "全書籍共通ルール",
     description: "日本語・事実・安全について、どの本でも守るルールです。",
     file: "01-common-writing-rules.md",
+    downloadName: "01_全書籍共通ルール.md",
     timing: "新しい本の作業を始めるとき",
     editing: "自分の方針に合わせて編集",
     related: "長文原稿を1冊仕上げる現在の方法",
@@ -98,6 +104,7 @@ export const downloads = [
     title: "本書専用ルール",
     description: "1冊ごとの読者、トーン、事実、禁止事項を整理します。",
     file: "02-book-specific-rules.md",
+    downloadName: "02_本書専用ルール.md",
     timing: "構成を決める前、または執筆中",
     editing: "記入して使用",
     related: "長文原稿を1冊仕上げる現在の方法",
@@ -114,6 +121,7 @@ export const downloads = [
     title: "AIからの逆質問",
     description: "原稿に足りない体験、感情、判断理由を引き出す依頼文です。",
     file: "03-reverse-questions.md",
+    downloadName: "03_AIからの逆質問.md",
     timing: "構成や初稿に本人の材料が足りないとき",
     editing: "原稿と一緒に渡して使用",
     related: "長文原稿を1冊仕上げる現在の方法",
@@ -130,6 +138,7 @@ export const downloads = [
     title: "AI並行レビュー",
     description: "複数AIへ同じ条件でレビューを頼む共通依頼文です。",
     file: "04-parallel-review.md",
+    downloadName: "04_AI並行レビュー.md",
     timing: "原稿が完成に近づいたとき",
     editing: "対象読者と文体を追記して使用",
     related: "長文原稿を1冊仕上げる現在の方法",
@@ -146,6 +155,7 @@ export const downloads = [
     title: "3段階の統合判定",
     description: "複数AIの意見を、多数決にせず再分類する依頼文です。",
     file: "05-review-integration.md",
+    downloadName: "05_3段階の統合判定.md",
     timing: "すべてのAIレビューが揃ったあと",
     editing: "原稿、ルール、全レビューと一緒に使用",
     related: "長文原稿を1冊仕上げる現在の方法",
@@ -162,6 +172,7 @@ export const downloads = [
     title: "出版前チェック",
     description: "AIレビュー後に、人間が最後に確認するための一覧です。",
     file: "06-final-checklist.md",
+    downloadName: "06_出版前チェック.md",
     timing: "KDPへ登録する直前",
     editing: "チェックしながら使用",
     related: "すべての記事",
@@ -178,6 +189,7 @@ export const downloads = [
     title: "チャット引き継ぎテンプレート",
     description: "長くなった作業を、次のチャットへ安全に渡すためのひな型です。",
     file: "07-chat-handoff.md",
+    downloadName: "07_チャット引き継ぎテンプレート.md",
     timing: "構成検討から本文制作へ移るとき",
     editing: "記入して、次のチャットへ添付",
     related: "長文原稿を1冊仕上げる現在の方法",

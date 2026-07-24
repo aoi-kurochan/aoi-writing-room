@@ -3,29 +3,18 @@ import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render(path = "/") {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}-${path}`);
-  const { default: worker } = await import(workerUrl.href);
-
-  return worker.fetch(
-    new Request(`http://localhost${path}`, {
-      headers: { accept: "text/html" },
-    }),
-    {
-      ASSETS: {
-        fetch: async () => new Response("Not found", { status: 404 }),
-      },
-    },
-    {
-      waitUntil() {},
-      passThroughOnException() {},
-    },
-  );
+  const relativePath =
+    path === "/" ? "../dist/client/index.html" : `../dist/client${path}/index.html`;
+  const html = await readFile(new URL(relativePath, import.meta.url), "utf8");
+  return new Response(html, {
+    status: 200,
+    headers: { "content-type": "text/html; charset=utf-8" },
+  });
 }
 
 for (const [path, expected] of [
   ["/", "あおい執筆室"],
-  ["/library", "原稿制作の工程から探す"],
+  ["/library", "追加実践記事を、制作工程から探す"],
   ["/resources", "原稿制作で使えるテンプレート"],
   ["/library/longform-with-codex", "長文原稿を1冊仕上げる現在の方法"],
   ["/library/ai-voice-before-after", "あおいの原稿ビフォー・アフター"],
@@ -80,4 +69,36 @@ test("contains no starter preview markers", async () => {
   assert.doesNotMatch(page, /codex-preview|SkeletonPreview|Building your site/);
   assert.doesNotMatch(layout, /Starter Project|codex-preview/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
+});
+
+test("keeps the approved update framing and direct reading links", async () => {
+  const response = await render("/");
+  const html = await response.text();
+
+  assert.match(html, /購入者限定・本編アップデート/);
+  assert.match(html, /毎月25万円の印税が振り込まれるまでにやったこと、全部書きました/);
+  assert.match(html, /href="\/library\/longform-with-codex#workflow-overview"/);
+  assert.match(html, /href="\/library\/ai-voice-before-after#examples"/);
+  assert.match(html, /href="\/resources#resource-06"/);
+  assert.doesNotMatch(html, /迷ったら、この順番で進んでください/);
+});
+
+test("uses consistent source quotation and purchaser-survey labels", async () => {
+  const [longformResponse, voiceResponse] = await Promise.all([
+    render("/library/longform-with-codex"),
+    render("/library/ai-voice-before-after"),
+  ]);
+  const [longform, voice] = await Promise.all([
+    longformResponse.text(),
+    voiceResponse.text(),
+  ]);
+  const quote =
+    "最初ね、15部ぐらいかな。1,980円で売って。で、そっからピタッと止まったんだよね。";
+
+  assert.match(longform, new RegExp(quote));
+  assert.match(voice, new RegExp(quote));
+  assert.match(longform, /購入者アンケートでは、長文原稿を作る際のAIの使い分けを詳しく知りたい/);
+  assert.match(voice, /購入者アンケートでは、AIっぽくならない文章の作り方を詳しく知りたい/);
+  assert.doesNotMatch(longform, /本編第/);
+  assert.doesNotMatch(voice, /本編第/);
 });

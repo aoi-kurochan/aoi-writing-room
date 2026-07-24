@@ -18,8 +18,12 @@ export default function Resources() {
           <p className="article-kicker">配布ファイル</p>
           <h1>原稿制作で使えるテンプレート</h1>
           <p>
-            どの工程で使うのか、編集が必要かを確認してからダウンロードしてください。
-            すべてMarkdown形式のため、内容を開いて確認し、自分の本に合わせて書き換えられます。
+            ここにあるファイルは、本編と追加実践記事で紹介した方法を、
+            ご自身の原稿で試すための補助ファイルです。
+          </p>
+          <p>
+            関連する記事と使う工程を確認し、必要な部分をご自身の本に合わせて書き換えてください。
+            すべてMarkdown形式で、ダウンロード後に内容を確認・編集できます。
           </p>
         </header>
 
@@ -44,9 +48,9 @@ export default function Resources() {
               <div className="resource-actions">
                 <MarkdownDownload
                   content={downloadContent[item.file]}
-                  fileName={item.file}
+                  fileName={item.downloadName}
                 >
-                  ダウンロード ↓
+                  {item.title}をダウンロード ↓
                 </MarkdownDownload>
                 <Link href={item.relatedHref}>関連：{item.related} →</Link>
               </div>

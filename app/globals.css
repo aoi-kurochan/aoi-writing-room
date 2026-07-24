@@ -31,6 +31,15 @@ body {
   letter-spacing: 0.015em;
 }
 a { color: inherit; text-decoration: none; }
+p,
+li,
+dd,
+h1,
+h2,
+h3 {
+  text-wrap: pretty;
+  word-break: auto-phrase;
+}
 code {
   padding: 0.12em 0.4em;
   border: 1px solid var(--blue-line);
@@ -159,6 +168,8 @@ code {
   font-size: 18px;
   line-height: 2.05;
 }
+.hero-lead p { margin: 0; }
+.hero-lead p + p { margin-top: 14px; }
 .hero-principles { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
 .hero-principles span {
   padding: 7px 12px;
@@ -218,12 +229,25 @@ code {
 .article-meta { margin: 0 0 10px; color: var(--muted); font-size: 11px; font-weight: 700; }
 .article-card h3 { margin: 0; color: var(--ink); font-family: var(--serif); font-size: 24px; line-height: 1.65; }
 .article-card p:not(.article-meta) { margin: 18px 0 20px; color: var(--muted); font-size: 14px; line-height: 1.85; }
+.article-related {
+  display: block;
+  margin: -8px 0 16px;
+  color: var(--blue-deep);
+  font-size: 10px;
+  font-weight: 700;
+}
 .article-card b { color: var(--blue-deep); font-size: 13px; }
 .article-card b span { margin-left: 6px; }
 .start-guide {
   padding: 38px 40px;
   border: 1px solid var(--blue-line);
   background: linear-gradient(145deg, var(--blue-faint), #fff);
+}
+.start-guide-intro {
+  max-width: 720px;
+  margin: -12px 0 22px;
+  color: var(--muted);
+  font-size: 14px;
 }
 .start-steps { margin: 0; padding: 0; list-style: none; }
 .start-steps li {
@@ -345,6 +369,17 @@ code {
   letter-spacing: .025em;
 }
 .article-summary { margin: 24px 0 0; color: #4f6c7c; font-size: 19px; line-height: 2; }
+.article-summary p { margin: 0; }
+.article-summary p + p { margin-top: 14px; }
+.article-context {
+  margin: 24px 0 0;
+  padding: 18px 20px;
+  border-left: 3px solid var(--blue);
+  background: var(--blue-faint);
+  color: #4f6c7c;
+  font-size: 14px;
+  line-height: 1.9;
+}
 .article-facts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -522,7 +557,8 @@ code {
   font-weight: 600;
   line-height: 1.5;
 }
-.index-header > p:last-child { margin: 22px 0 0; color: var(--muted); }
+.index-header > p:not(.article-kicker) { margin: 22px 0 0; color: var(--muted); }
+.index-header > p:not(.article-kicker) + p { margin-top: 10px; }
 .library-sections,
 .resource-list { margin-top: 70px; }
 .library-category { padding: 36px 0; scroll-margin-top: 24px; border-bottom: 1px solid var(--blue-line); }

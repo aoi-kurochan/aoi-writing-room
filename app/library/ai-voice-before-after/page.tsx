@@ -5,6 +5,7 @@ import { articles } from "../../_data/content";
 const article = articles[1];
 
 const Example = ({
+  id,
   number,
   title,
   sourceLabel,
@@ -13,6 +14,7 @@ const Example = ({
   after,
   lesson,
 }: {
+  id?: string;
   number: string;
   title: string;
   sourceLabel: string;
@@ -21,7 +23,7 @@ const Example = ({
   after: React.ReactNode;
   lesson: React.ReactNode;
 }) => (
-  <section className="case-example">
+  <section className="case-example" id={id}>
     <header>
       <span>{number}</span>
       <h2>{title}</h2>
@@ -61,6 +63,11 @@ export default function AiVoiceBeforeAfter() {
         <header className="article-header">
           <p className="article-kicker">{article.primaryCategory}</p>
           <h1>{article.title}</h1>
+          <p className="article-context">
+            この内容は、本編の第3章「AIライティングは作り込みが超重要」を補足する追加実践記事です。
+            購入者アンケートでは、AIっぽくならない文章の作り方を詳しく知りたい、
+            という声を多くいただきました。実際の制作記録から、修正の判断例をまとめています。
+          </p>
           <p className="article-summary">
             私が「AIっぽい」と感じるのは、語尾が整っている文章ではありません。
             本人が経験していないことを補い、迷いを消し、どこかで見た結論へ滑らかに着地する文章です。
@@ -72,7 +79,7 @@ export default function AiVoiceBeforeAfter() {
               <dt>見せるもの</dt>
               <dd>AIの案、本人の返答、音声材料、完成稿のうち、各判断を確認できる資料</dd>
             </div>
-            <div><dt>関連する本編</dt><dd>{article.chapters}「AIライティングは作り込みが超重要」</dd></div>
+            <div><dt>関連する本編</dt><dd>本編の{article.chapters}「AIライティングは作り込みが超重要」</dd></div>
           </dl>
         </header>
 
@@ -92,6 +99,7 @@ export default function AiVoiceBeforeAfter() {
         </section>
 
         <Example
+          id="examples"
           number="01"
           title="「書かないこと」を並べず、渡す内容を前向きに示す"
           sourceLabel="企画段階でAIが出した構成案"
