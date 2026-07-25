@@ -36,7 +36,7 @@ export default function AiVoiceBeforeAfter() {
             </div>
             <div>
               <dt>見せるもの</dt>
-              <dd>AIの案、音声回答、私の違和感・判断、完成稿</dd>
+              <dd>AIの案、音声回答、私の違和感、編集判断、完成稿</dd>
             </div>
             <div>
               <dt>関連する本編</dt>
@@ -65,9 +65,12 @@ export default function AiVoiceBeforeAfter() {
               私が音声で答えた内容の原文抜粋
             </li>
             <li>
-              <b>私の違和感・判断：</b>
-              当時のやり取りをもとに、私が何に違和感を持ち、
-              何を直す・残すと決めたのかを整理したもの
+              <b>私の違和感：</b>
+              当時のやり取りをもとに、AIの案の何が違うと感じたのかを整理したもの
+            </li>
+            <li>
+              <b>編集判断：</b>
+              当時のやり取りをもとに、何を直し、何を残すと決めたのかを記事用に要約したもの
             </li>
             <li>
               <b>完成稿：</b>
@@ -107,6 +110,10 @@ export default function AiVoiceBeforeAfter() {
             <p>
               ただ、何を書かないかは、読者が最初に知りたいことではないと思いました。
             </p>
+          </div>
+
+          <div className="feedback-block decision-block">
+            <p className="compare-label">どう直すと決めたか</p>
             <p>
               自分用の企画メモでは、扱う範囲を決めます。でも、読者向けの本文で中心に置きたいのは、
               「この本から何を受け取れるのか」です。
@@ -170,6 +177,10 @@ export default function AiVoiceBeforeAfter() {
               まだ知らないサービスを理解できた。最初の一歩を踏み出せた。
               そこまででも、十分に価値があると思います。
             </p>
+          </div>
+
+          <div className="feedback-block decision-block">
+            <p className="compare-label">どう直すと決めたか</p>
             <p>
               そこで、「最初の一歩を軽くする」という、
               読者が受け取れる具体的な価値へ言い換えました。
@@ -228,7 +239,10 @@ export default function AiVoiceBeforeAfter() {
           </div>
 
           <div className="feedback-block">
-            <p className="compare-label">私が残すと決めたこと</p>
+            <p className="compare-label">音声回答から、本文へ残した材料</p>
+            <p className="source-caption">
+              以下は、上の音声回答をもとに、完成稿へ残す材料を整理したものです。
+            </p>
             <p>最初に15部売れたという数字だけで終わらせず、次の3つを残しました。</p>
             <ul>
               <li>15部が多いのか、少ないのか判断できなかったこと</li>
@@ -292,16 +306,21 @@ export default function AiVoiceBeforeAfter() {
           </div>
 
           <div className="feedback-block">
-            <p className="compare-label">私が文章へ残すと決めた基準</p>
-            <p>
-              「無料情報の寄せ集めは弱い」という一般論ではなく、
-              私自身が原稿を書くときに守っている基準として残しました。
+            <p className="compare-label">音声回答から整理した判断基準</p>
+            <p className="source-caption">
+              以下は、上の音声回答に含まれている判断を、今回の記事用に要約したものです。
+              音声回答の直接引用ではありません。
             </p>
-            <p>それは、調べた事実を書いてはいけない、という意味ではありません。</p>
             <p>
               自分がやっていないことを、自分の実践として書かない。
-              外部から調べた事実と、自分の経験を混ぜない。
-              私が大事にしているのは、この線です。
+            </p>
+            <p>
+              外部から調べた事実は出典を確認し、自分の経験とは分けて書く。
+            </p>
+            <p>
+              調べた事実を書いてはいけない、という意味ではありません。
+              事実と経験を混ぜず、どこまでが自分の実践なのかを明確にする。
+              この基準を本文へ残しました。
             </p>
           </div>
 
@@ -332,7 +351,7 @@ export default function AiVoiceBeforeAfter() {
         </section>
 
         <section className="anti-ai-check">
-          <h2>私が公開前に確認する2つの方向</h2>
+          <h2>私が公開前に確認する2つの観点</h2>
           <div className="check-grid">
             <div>
               <h3>意味と日本語</h3>
@@ -364,10 +383,10 @@ export default function AiVoiceBeforeAfter() {
             AIへ渡す材料と、原稿の途中でどんな違和感を返すかによって変わります。
           </p>
           <p>
-            書き手が何を経験したのか。どこで迷ったのか。
-            AIの最初の案へ、なぜ「違う」と感じたのか。
-            その材料がなければ、文章だけを整えても、
-            誰が書いたのか見えない原稿へ寄りやすくなります。
+            書き手が何を経験したのか、どこで迷ったのか。
+            AIの最初の案を、なぜ「違う」と感じたのか。
+            こうした材料がなければ、文章だけを整えても、
+            個性を感じない原稿になりやすくなります。
           </p>
           <p>
             一方で、経験と判断基準を渡せば、AIは頼れる編集者になります。

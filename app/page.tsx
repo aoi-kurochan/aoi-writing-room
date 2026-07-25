@@ -48,7 +48,7 @@ export default function Home() {
           <ol className="start-steps">
             <li><span>1</span><p><b><Link href="/library/longform-with-codex#workflow-overview">1冊を仕上げる現在の流れを知る →</Link></b>最初に、8つの工程で全体像を確認します。</p></li>
             <li><span>2</span><p><b><Link href="/library/longform-with-codex#voice">音声入力で、自分の経験や判断を原稿の材料にする →</Link></b>5分を目安に話し、タイピングだけでは省きやすい背景や迷いを残します。</p></li>
-            <li><span>3</span><p><b><Link href="/library/longform-with-codex#markdown">2種類のルールで、文章の個性と品質を安定させる →</Link></b>すべての本で守るルールと、その本だけのルールを分け、AIが前提を取り違えにくい状態を作ります。</p></li>
+            <li><span>3</span><p><b><Link href="/library/longform-with-codex#markdown">2種類のMarkdownで、文章の個性と品質を安定させる →</Link></b>すべての本で守るルールと、その本だけのルールを分け、AIが前提を取り違えにくい状態を作ります。</p></li>
             <li><span>4</span><p><b><Link href="/library/ai-voice-before-after#examples">AIっぽさを消す判断基準を、実例で確認する →</Link></b>AIの案と完成稿を比べ、何を直し、何を残したのかを確認します。</p></li>
             <li><span>5</span><p><b><Link href="/resources#resource-06">公開前に、自分の目で事実・日本語・安全性を確認する →</Link></b>AIのレビューだけで終わらせず、出版前チェックリストで最終確認します。</p></li>
           </ol>

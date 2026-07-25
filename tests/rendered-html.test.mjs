@@ -110,6 +110,25 @@ test("uses consistent source quotation and purchaser-survey labels", async () =>
   assert.doesNotMatch(voice, /本編第/);
 });
 
+test("explains prompts and keeps the Markdown value heading consistent", async () => {
+  const [homeResponse, longformResponse] = await Promise.all([
+    render("/"),
+    render("/library/longform-with-codex"),
+  ]);
+  const [home, longform] = await Promise.all([
+    homeResponse.text(),
+    longformResponse.text(),
+  ]);
+
+  const markdownHeading = "2種類のMarkdownで、文章の個性と品質を安定させる";
+  assert.match(home, new RegExp(markdownHeading));
+  assert.match(longform, new RegExp(markdownHeading));
+  assert.match(longform, /まず、原稿と既存ファイルをAIへ渡し、次のように頼みます/);
+  assert.match(longform, /本文作成へ移る前に、AIへ次のように依頼し/);
+  assert.match(longform, /重要な順に作ってください/);
+  assert.doesNotMatch(longform, /重要な順に5問だけ作ってください/);
+});
+
 test("keeps the approved article 02 language and source labels", async () => {
   const response = await render("/library/ai-voice-before-after");
   const html = await response.text();
@@ -118,15 +137,23 @@ test("keeps the approved article 02 language and source labels", async () => {
     html,
     /文章は整っていても、書き手の経験、迷い、判断が見えず、\s*誰が書いても同じような文章に見える状態を指します/,
   );
-  assert.match(html, /私の違和感・判断/);
+  assert.match(html, /私の違和感/);
+  assert.match(html, /編集判断/);
+  assert.match(html, /どう直すと決めたか/);
+  assert.match(html, /音声回答から整理した判断基準/);
+  assert.match(html, /今回の記事用に要約したものです/);
   assert.match(html, /音声回答の文字起こし（抜粋）/);
   assert.match(html, /原稿制作フローの記事でも紹介しました/);
+  assert.match(html, /私が公開前に確認する2つの観点/);
+  assert.match(html, /個性を感じない原稿になりやすくなります/);
   assert.match(html, /AIっぽさは、最後の言い換えだけでは消えない/);
   assert.doesNotMatch(html, /案が置かれていました/);
   assert.doesNotMatch(html, /言葉が置かれていました/);
   assert.doesNotMatch(html, /数字が実体験へ戻ります/);
   assert.doesNotMatch(html, /文章に書き手を戻します/);
   assert.doesNotMatch(html, /主語が「あおい」と「あなた」で揺れていないか/);
+  assert.doesNotMatch(html, /私が公開前に確認する2つの方向/);
+  assert.doesNotMatch(html, /誰が書いたのか見えない原稿/);
 });
 
 test("contains no prohibited third-party AI name", async () => {

@@ -672,7 +672,9 @@ code {
 .before-block { background: #fbfbfa; }
 .after-block { background: var(--green-soft); }
 .feedback-block { border-left: 3px solid var(--blue); background: var(--blue-faint); }
+.decision-block { border-left-color: #6a9d8f; background: var(--green-soft); }
 .compare-label { margin: 0 0 12px !important; color: var(--blue-deep); font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+.source-caption { margin: 0 0 14px !important; color: var(--muted); font-size: 13px; line-height: 1.8; }
 .compare-block div > p,
 .feedback-block div > p { margin: 0 0 14px; }
 .compare-block div > p:last-child,
@@ -696,8 +698,9 @@ code {
 .lesson-box { margin-top: 18px; background: var(--cream); }
 .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .check-grid > div { padding: 24px 26px; border: 1px solid var(--blue-line); background: var(--blue-faint); }
-.check-grid h3 { margin: 0 0 10px; font-family: var(--serif); font-size: 18px; }
-.check-grid ul { margin: 0; padding-left: 1.25em; }
+.check-grid h3 { margin: 0 0 10px; font-family: inherit; font-size: 17px; font-weight: 700; }
+.check-grid ul { margin: 0; padding-left: 1.25em; list-style: disc; }
+.check-grid li::marker { color: var(--blue); }
 .case-conclusion { padding: 36px 38px; border-left: 3px solid var(--blue); background: var(--cream); }
 .case-conclusion h2 { font-size: 28px; }
 

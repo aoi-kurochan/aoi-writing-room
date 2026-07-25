@@ -54,7 +54,7 @@ export default function LongformWithCodex() {
             <li><a href="#voice">5分の音声ダンプで材料を出す</a></li>
             <li><a href="#questions">AIに逆質問してもらう</a></li>
             <li><a href="#case-study">1冊の実例で、材料が本文になるまでを見る</a></li>
-            <li><a href="#markdown">2種類のMarkdownで前提を残す</a></li>
+            <li><a href="#markdown">2種類のMarkdownで、文章の個性と品質を安定させる</a></li>
             <li><a href="#handoff">長くなったら、執筆チャットを分ける</a></li>
             <li><a href="#parallel-review">複数AIを並行してレビューする</a></li>
             <li><a href="#last-word">最後に決めるのは、自分</a></li>
@@ -177,10 +177,14 @@ export default function LongformWithCodex() {
             以下では、約20問の中から原稿へ大きく影響した3問を抜粋しています。
             当時の流れが分かるように、元の質問番号を残しました。
           </p>
+          <p className="prompt-intro">
+            まず、原稿と既存ファイルをAIへ渡し、次のように頼みます。
+            以下は、そのまま編集して使える依頼文のたたき台です。
+          </p>
           <blockquote>
             この原稿を、一般論の説明ではなく、著者本人の経験と判断が残る原稿へ仕上げたいです。
             原稿と既存ファイルを読み、足りない事実、具体例、感情、失敗、判断理由を引き出す質問を、
-            重要な順に5問だけ作ってください。質問が必要な理由と、回答を入れる候補の章も添えてください。
+            重要な順に作ってください。質問が必要な理由と、回答を入れる候補の章も添えてください。
             回答はまだ本文へ入れず、まず整理案を見せてください。
           </blockquote>
           <Link className="text-link" href="/resources#resource-03">
@@ -272,10 +276,14 @@ export default function LongformWithCodex() {
         </section>
 
         <section id="markdown">
-          <h2>2種類のMarkdownで、前提を残す</h2>
+          <h2>2種類のMarkdownで、文章の個性と品質を安定させる</h2>
           <p>
             Markdownは、見出しや箇条書きを簡単な記号で整理できるテキスト形式です。
             ファイル名の末尾は<code>.md</code>。装飾が少なく、AIが読みやすいのが利点です。
+          </p>
+          <p>
+            すべての本で守る品質のルールと、その本だけで守る個性のルールを分けると、
+            AIが前提を取り違えにくくなり、長い原稿でも文章の方向を安定させやすくなります。
           </p>
           <div className="rule-pair">
             <div>
@@ -316,6 +324,10 @@ export default function LongformWithCodex() {
             構成や材料の議論が長くなったあと、そのまま本文まで書き続けると、
             どれが確定事項で、どれが途中案なのか分かりにくくなります。
             そこで、本文を書き始める前に引き継ぎファイルを作ります。
+          </p>
+          <p className="prompt-intro">
+            本文作成へ移る前に、AIへ次のように依頼し、
+            ここまでに決まった内容を引き継ぎファイルへ整理してもらいます。
           </p>
           <blockquote>
             ここまでの議論を、次の執筆チャットが取り違えないように整理してください。
