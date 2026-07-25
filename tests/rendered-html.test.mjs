@@ -105,7 +105,10 @@ test("uses consistent source quotation and purchaser-survey labels", async () =>
   assert.match(longform, new RegExp(quote));
   assert.match(voice, new RegExp(quote));
   assert.match(longform, /購入者アンケートでは、長文原稿を作る際のAIの使い分けを詳しく知りたい/);
-  assert.match(voice, /購入者アンケートでは、AIっぽくならない文章の作り方を詳しく知りたい/);
+  assert.match(
+    voice,
+    /購入者アンケートでは、「AIっぽくならない文章の作り方を詳しく知りたい」\s*という声/,
+  );
   assert.doesNotMatch(longform, /本編第/);
   assert.doesNotMatch(voice, /本編第/);
 });
@@ -137,16 +140,41 @@ test("keeps the approved article 02 language and source labels", async () => {
     html,
     /文章は整っていても、書き手の経験、迷い、判断が見えず、\s*誰が書いても同じような文章に見える状態を指します/,
   );
-  assert.match(html, /私の違和感/);
-  assert.match(html, /編集判断/);
-  assert.match(html, /どう直すと決めたか/);
-  assert.match(html, /音声回答から整理した判断基準/);
-  assert.match(html, /今回の記事用に要約したものです/);
-  assert.match(html, /音声回答の文字起こし（抜粋）/);
-  assert.match(html, /原稿制作フローの記事でも紹介しました/);
+  assert.match(html, /AIの構成案｜構成検討中｜要旨/);
+  assert.match(html, /私からAIへの返答｜構成検討中｜要旨/);
+  assert.match(html, /AIからの逆質問｜初稿完成後｜原文/);
+  assert.match(html, /私の音声回答｜逆質問への回答時｜文字起こし・抜粋/);
+  assert.match(html, /AIの改稿用整理｜音声回答後｜要旨/);
+  assert.match(html, /私の採用判断｜改稿時/);
+  assert.match(html, /完成稿｜改稿後｜実際の書籍本文/);
+  assert.match(html, /私がAIへ返した問題提起（要旨）/);
+  assert.match(html, /意味を変えずに読みやすく整理したものです/);
+  assert.match(html, /原稿制作フローの記事でも紹介しています/);
   assert.match(html, /私が公開前に確認する2つの観点/);
-  assert.match(html, /個性を感じない原稿になりやすくなります/);
+  assert.match(html, /書き手の個性を感じにくい原稿へ寄りやすくなります/);
   assert.match(html, /AIっぽさは、最後の言い換えだけでは消えない/);
+  assert.match(
+    html,
+    /AIは、売れた瞬間だけではなく、「あんなに時間をかけて作ったのに」\s*と不安になった時間も、実録として残す材料だと整理しました/,
+  );
+  assert.match(
+    html,
+    /声に出したとき、実際には使わない不自然な日本語になっていないか/,
+  );
+  assert.match(
+    html,
+    /自分が実践していないことを、自分の実践として書かないことが、\s*書く内容を決める基準になっている/,
+  );
+  assert.match(
+    html,
+    /「これは私が読者へ届けたい言葉か」を決めるのは、私です/,
+  );
+  assert.doesNotMatch(html, /制作時点：/);
+  assert.doesNotMatch(html, /AI →|私 →/);
+  assert.doesNotMatch(html, /誰も言わない日本語/);
+  assert.doesNotMatch(html, /長い経験を持つ専門家/);
+  assert.doesNotMatch(html, /現在の状態：/);
+  assert.doesNotMatch(html, /検証資料：/);
   assert.doesNotMatch(html, /案が置かれていました/);
   assert.doesNotMatch(html, /言葉が置かれていました/);
   assert.doesNotMatch(html, /数字が実体験へ戻ります/);

@@ -657,6 +657,29 @@ code {
 .case-intro { padding: 32px 34px; border: 1px solid var(--blue-line); background: var(--blue-faint); }
 .case-intro h2 { font-size: 25px; }
 .case-intro p:last-child { margin-bottom: 0; }
+.case-group {
+  padding: 30px 34px;
+  border-top: 1px solid var(--blue-line);
+  border-bottom: 1px solid var(--blue-line);
+  background: linear-gradient(145deg, var(--blue-faint), #fff);
+}
+.case-group-label {
+  margin: 0 0 5px !important;
+  color: var(--blue);
+  font-family: Georgia, serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+.case-group h2 {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.case-group p:last-child { margin-bottom: 0; color: var(--muted); }
 .case-example { padding-top: 10px; border-top: 1px solid var(--blue-line); }
 .case-example > header { display: grid; grid-template-columns: 46px 1fr; gap: 16px; align-items: start; margin-bottom: 30px; }
 .case-example > header > span {
@@ -673,7 +696,18 @@ code {
 .after-block { background: var(--green-soft); }
 .feedback-block { border-left: 3px solid var(--blue); background: var(--blue-faint); }
 .decision-block { border-left-color: #6a9d8f; background: var(--green-soft); }
-.compare-label { margin: 0 0 12px !important; color: var(--blue-deep); font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+.material-meta {
+  margin: 0 0 12px !important;
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgba(76, 132, 158, .22);
+  color: var(--blue-deep);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.7;
+  letter-spacing: .035em;
+}
+.compare-block > h3,
+.feedback-block > h3 { margin: 0 0 12px; font-size: 17px; }
 .source-caption { margin: 0 0 14px !important; color: var(--muted); font-size: 13px; line-height: 1.8; }
 .compare-block div > p,
 .feedback-block div > p { margin: 0 0 14px; }
@@ -759,6 +793,7 @@ code {
   .review-comparison .review-decision { grid-column: auto; }
   .steps li { grid-template-columns: 1fr; gap: 2px; }
   .case-intro,
+  .case-group,
   .case-conclusion { padding: 27px 24px; }
   .case-example > header { grid-template-columns: 1fr; gap: 4px; }
   .case-example h2 { font-size: 27px; }
