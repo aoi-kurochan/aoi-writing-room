@@ -45,6 +45,7 @@ next-env.d.ts
 /drizzle/
 /examples/
 /worker/
-/.openai/
+/.openai/*
+!/.openai/hosting.json
 /.pnpm-store/
 /work/
