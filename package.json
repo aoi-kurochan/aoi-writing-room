@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && cp -R out dist",
+    "build": "vinext build && mkdir -p dist/.openai && cp .openai/hosting.json dist/.openai/hosting.json",
     "build:github": "next build",
     "start": "next start",
     "test": "next build --webpack && node --test tests/rendered-html.test.mjs",
