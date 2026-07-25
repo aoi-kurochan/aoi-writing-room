@@ -677,6 +677,22 @@ code {
 .feedback-block div > p { margin: 0 0 14px; }
 .compare-block div > p:last-child,
 .feedback-block div > p:last-child { margin-bottom: 0; }
+.compare-block blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.compare-block blockquote > p { margin: 0 0 14px; }
+.compare-block blockquote > p:last-child { margin-bottom: 0; }
+.source-note {
+  margin: 28px 0 16px !important;
+  padding: 16px 18px;
+  border-left: 3px solid var(--blue);
+  background: var(--blue-faint);
+  color: #4f6c7c;
+  font-size: 14px;
+}
 .lesson-box { margin-top: 18px; background: var(--cream); }
 .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .check-grid > div { padding: 24px 26px; border: 1px solid var(--blue-line); background: var(--blue-faint); }

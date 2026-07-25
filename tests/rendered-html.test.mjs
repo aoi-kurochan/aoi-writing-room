@@ -109,3 +109,42 @@ test("uses consistent source quotation and purchaser-survey labels", async () =>
   assert.doesNotMatch(longform, /本編第/);
   assert.doesNotMatch(voice, /本編第/);
 });
+
+test("keeps the approved article 02 language and source labels", async () => {
+  const response = await render("/library/ai-voice-before-after");
+  const html = await response.text();
+
+  assert.match(
+    html,
+    /文章は整っていても、書き手の経験、迷い、判断が見えず、\s*誰が書いても同じような文章に見える状態を指します/,
+  );
+  assert.match(html, /私の違和感・判断/);
+  assert.match(html, /音声回答の文字起こし（抜粋）/);
+  assert.match(html, /原稿制作フローの記事でも紹介しました/);
+  assert.match(html, /AIっぽさは、最後の言い換えだけでは消えない/);
+  assert.doesNotMatch(html, /案が置かれていました/);
+  assert.doesNotMatch(html, /言葉が置かれていました/);
+  assert.doesNotMatch(html, /数字が実体験へ戻ります/);
+  assert.doesNotMatch(html, /文章に書き手を戻します/);
+  assert.doesNotMatch(html, /主語が「あおい」と「あなた」で揺れていないか/);
+});
+
+test("contains no prohibited third-party AI name", async () => {
+  const prohibitedNames = new RegExp(
+    [
+      "EXTERNAL_PERSON_SAMPLE_A",
+      "EXTERNAL_PERSON_SAMPLE_B",
+      "EXTERNAL_PERSON_SAMPLE",
+    ].join("|"),
+    "i",
+  );
+  const sourceFiles = await Promise.all([
+    readFile(new URL("../app/_data/content.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/_data/download-content.json", import.meta.url), "utf8"),
+    readFile(new URL("../app/library/longform-with-codex/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/library/ai-voice-before-after/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/resources/page.tsx", import.meta.url), "utf8"),
+  ]);
+
+  assert.doesNotMatch(sourceFiles.join("\n"), prohibitedNames);
+});
