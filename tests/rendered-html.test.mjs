@@ -184,15 +184,17 @@ test("keeps the approved article 02 language and source labels", async () => {
   assert.doesNotMatch(html, /誰が書いたのか見えない原稿/);
 });
 
-test("contains no prohibited third-party AI name", async () => {
-  const prohibitedNames = new RegExp(
+test("contains no public-blocklist sentinel strings", async () => {
+  const publicBlocklistSentinels = new RegExp(
     [
       "EXTERNAL_PERSON_SAMPLE_A",
       "EXTERNAL_PERSON_SAMPLE_B",
-      "EXTERNAL_PERSON_SAMPLE",
+      "EXTERNAL_SERVICE_SAMPLE",
     ].join("|"),
     "i",
   );
+  assert.match("EXTERNAL_PERSON_SAMPLE_A", publicBlocklistSentinels);
+
   const sourceFiles = await Promise.all([
     readFile(new URL("../app/_data/content.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/_data/download-content.json", import.meta.url), "utf8"),
@@ -201,5 +203,5 @@ test("contains no prohibited third-party AI name", async () => {
     readFile(new URL("../app/resources/page.tsx", import.meta.url), "utf8"),
   ]);
 
-  assert.doesNotMatch(sourceFiles.join("\n"), prohibitedNames);
+  assert.doesNotMatch(sourceFiles.join("\n"), publicBlocklistSentinels);
 });
