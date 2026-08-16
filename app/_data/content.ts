@@ -79,6 +79,22 @@ export const articles = [
     environment: "過去ログ／音声回答／完成原稿",
     status: "判断基準は現在も使用中",
   },
+  {
+    number: "03",
+    slug: "codex-book-rewrite",
+    href: "/library/codex-book-rewrite",
+    title: "1年前の本を、いまの基準で育て直す。Codex既刊リライトの実録",
+    summary:
+      "価値の残る既刊を選び、本文、監査、挿絵、巻末、最終DOCXまで育て直した実例を、Codexに任せたことと著者が決めたことに分けて紹介します。",
+    originLabel: "現在の既刊リライト実務を反映",
+    primaryCategory: "出版後に育てる",
+    categoryId: "grow",
+    tags: ["本文を書く", "編集・レビューする"],
+    chapters: "第3章〜第5章・第10章",
+    verified: "2026年8月",
+    environment: "Mac／Codexデスクトップアプリ",
+    status: "既刊5冊で実施",
+  },
 ] as const;
 
 export const downloads = [
@@ -92,6 +108,7 @@ export const downloads = [
     editing: "書き換えて使用",
     related: "長文原稿を1冊仕上げる現在の方法",
     relatedHref: "/library/longform-with-codex#markdown",
+    verified: "2026年7月",
     version: "v1.1",
     steps: [
       "内容を読み、自分の執筆方針に合わないルールを削る。",
@@ -110,6 +127,7 @@ export const downloads = [
     editing: "テンプレートは書き換えて使用／記入例は参考として閲覧",
     related: "長文原稿を1冊仕上げる現在の方法",
     relatedHref: "/library/longform-with-codex#markdown",
+    verified: "2026年7月",
     version: "v1.1",
     steps: [
       "読者、伝えたいこと、公開範囲、文体などの空欄を埋める。",
@@ -127,6 +145,7 @@ export const downloads = [
     editing: "そのまま使用可能",
     related: "長文原稿を1冊仕上げる現在の方法",
     relatedHref: "/library/longform-with-codex#questions",
+    verified: "2026年7月",
     version: "v1.1",
     steps: [
       "初稿または構成と、2種類の執筆ルールをAIへ渡す。",
@@ -144,6 +163,7 @@ export const downloads = [
     editing: "対象読者と文体を書き換えて使用",
     related: "長文原稿を1冊仕上げる現在の方法",
     relatedHref: "/library/longform-with-codex#parallel-review",
+    verified: "2026年7月",
     version: "v1.1",
     steps: [
       "原稿から個人情報や、共有してはいけない情報を外す。",
@@ -161,6 +181,7 @@ export const downloads = [
     editing: "そのまま使用可能",
     related: "長文原稿を1冊仕上げる現在の方法",
     relatedHref: "/library/longform-with-codex#parallel-review",
+    verified: "2026年7月",
     version: "v1.1",
     steps: [
       "原稿、2種類の執筆ルール、複数AIのレビュー全文をCodexへ渡す。",
@@ -178,6 +199,7 @@ export const downloads = [
     editing: "そのまま使用可能",
     related: "出版前・KDPの工程",
     relatedHref: "/library#publish",
+    verified: "2026年7月",
     version: "v1.1",
     steps: [
       "KDPへ登録する直前に、一覧を上から確認する。",
@@ -195,11 +217,30 @@ export const downloads = [
     editing: "書き換えて使用",
     related: "長文原稿を1冊仕上げる現在の方法",
     relatedHref: "/library/longform-with-codex#handoff",
+    verified: "2026年7月",
     version: "v1.0",
     steps: [
       "現在のチャットへ、この項目に沿った引き継ぎを作るよう依頼する。",
       "途中案と確定事項、本文の正本が混ざっていないか自分で確認する。",
       "最新本文、執筆ルール、必要資料と一緒に、新しいチャットへ渡す。",
+    ],
+  },
+  {
+    number: "08",
+    title: "Codex既刊リライト開始キット",
+    description: "既刊の選定から最終DOCXまで、実作業を8STEPで進める手順と依頼文です。",
+    file: "08-codex-book-rewrite-starter-kit.md",
+    downloadName: "08_Codex既刊リライト開始キット.md",
+    timing: "既刊をリライトするとき",
+    editing: "書き換えて使用",
+    related: "Codex既刊リライトの実録",
+    relatedHref: "/library/codex-book-rewrite",
+    verified: "2026年8月",
+    version: "v1.0",
+    steps: [
+      "直す価値のある既刊を1冊選ぶ。",
+      "変えないものと変えるものを決める。",
+      "本文を変更せず、修正候補だけを出してもらう。",
     ],
   },
 ] as const;

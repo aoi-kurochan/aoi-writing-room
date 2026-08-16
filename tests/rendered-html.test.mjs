@@ -22,6 +22,7 @@ for (const [path, expected] of [
   ["/resources", "原稿制作で使えるテンプレート"],
   ["/library/longform-with-codex", "AIで長文原稿を1冊仕上げる、現在の制作フロー"],
   ["/library/ai-voice-before-after", "あおいの原稿ビフォー・アフター"],
+  ["/library/codex-book-rewrite", "1年前の本を、いまの基準で育て直す。Codex既刊リライトの実録"],
 ]) {
   test(`server-renders ${path}`, async () => {
     const response = await render(path);
@@ -42,7 +43,7 @@ test("keeps search exclusion and purchaser notice", async () => {
   assert.doesNotMatch(robots, /Disallow: \//);
 });
 
-test("embeds all seven downloads without public raw-file URLs", async () => {
+test("embeds all eight downloads without public raw-file URLs", async () => {
   const downloadContent = JSON.parse(
     await readFile(new URL("../app/_data/download-content.json", import.meta.url), "utf8"),
   );
@@ -55,6 +56,7 @@ test("embeds all seven downloads without public raw-file URLs", async () => {
     "05-review-integration.md",
     "06-final-checklist.md",
     "07-chat-handoff.md",
+    "08-codex-book-rewrite-starter-kit.md",
   ]) {
     assert.match(downloadContent[file] ?? "", /^# /);
     await assert.rejects(access(new URL(`../public/downloads/${file}`, import.meta.url)));
@@ -77,16 +79,19 @@ test("contains no starter preview markers", async () => {
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 });
 
-test("keeps the approved update framing and direct reading links", async () => {
+test("shows the latest update and direct action links", async () => {
   const response = await render("/");
   const html = await response.text();
 
   assert.match(html, /購入者限定・本編アップデート/);
   assert.match(html, /毎月25万円の印税が振り込まれるまでにやったこと、全部書きました/);
+  assert.match(html, /最新アップデート/);
+  assert.match(html, /1年前の本を、いまの基準で育て直す/);
+  assert.match(html, /href="\/library\/codex-book-rewrite\/?"/);
+  assert.match(html, /開始キットをダウンロード/);
   assert.match(html, /AIで長文原稿を1冊仕上げる、現在の制作フロー/);
-  assert.match(html, /href="\/library\/longform-with-codex\/?#workflow-overview"/);
-  assert.match(html, /href="\/library\/ai-voice-before-after\/?#examples"/);
-  assert.match(html, /href="\/resources\/?#resource-06"/);
+  assert.match(html, /これまでの実践記事/);
+  assert.doesNotMatch(html, /今回追加した2つの記事/);
   assert.doesNotMatch(html, /迷ったら、この順番で進んでください/);
 });
 
@@ -113,23 +118,48 @@ test("uses consistent source quotation and purchaser-survey labels", async () =>
   assert.doesNotMatch(voice, /本編第/);
 });
 
-test("explains prompts and keeps the Markdown value heading consistent", async () => {
-  const [homeResponse, longformResponse] = await Promise.all([
-    render("/"),
-    render("/library/longform-with-codex"),
-  ]);
-  const [home, longform] = await Promise.all([
-    homeResponse.text(),
-    longformResponse.text(),
-  ]);
+test("explains prompts and keeps the Markdown value heading", async () => {
+  const longformResponse = await render("/library/longform-with-codex");
+  const longform = await longformResponse.text();
 
   const markdownHeading = "2種類のMarkdownで、文章の個性と品質を安定させる";
-  assert.match(home, new RegExp(markdownHeading));
   assert.match(longform, new RegExp(markdownHeading));
   assert.match(longform, /まず、原稿と既存ファイルをAIへ渡し、次のように頼みます/);
   assert.match(longform, /本文作成へ移る前に、AIへ次のように依頼し/);
   assert.match(longform, /重要な順に作ってください/);
   assert.doesNotMatch(longform, /重要な順に5問だけ作ってください/);
+});
+
+test("keeps the Codex rewrite article factual and actionable", async () => {
+  const [articleResponse, libraryResponse, resourcesResponse] = await Promise.all([
+    render("/library/codex-book-rewrite"),
+    render("/library"),
+    render("/resources"),
+  ]);
+  const [article, library, resources] = await Promise.all([
+    articleResponse.text(),
+    libraryResponse.text(),
+    resourcesResponse.text(),
+  ]);
+
+  assert.match(article, /旧版v4 → 作業版v5 → 完成版v8/);
+  assert.match(article, /PHASE 1/);
+  assert.match(article, /PHASE 5/);
+  assert.match(article, /Codexに任せたこと/);
+  assert.match(article, /私が決めたこと/);
+  assert.match(article, /名前の部分を消せば良いでしょう/);
+  assert.match(article, /ChatGPTの文章は下書きとして受け取り/);
+  assert.match(article, /少しずつ1記事へ近づいていけます/);
+  assert.match(article, /32節に1枚ずつ/);
+  assert.match(article, /合計34枚/);
+  assert.match(article, /最初の今日はSTEP1〜3までで十分です/);
+  assert.doesNotMatch(article, /リライトすれば印税が増える/);
+  assert.doesNotMatch(article, /980円の単体/);
+  assert.match(library, /出版後に育てる/);
+  assert.match(library, /codex-book-rewrite/);
+  assert.match(resources, /08/);
+  assert.match(resources, /Codex既刊リライト開始キット/);
+  assert.match(resources, /2026年8月[\s\S]{0,50}v1\.0/);
 });
 
 test("keeps the approved article 02 language and source labels", async () => {
@@ -200,6 +230,7 @@ test("contains no public-blocklist sentinel strings", async () => {
     readFile(new URL("../app/_data/download-content.json", import.meta.url), "utf8"),
     readFile(new URL("../app/library/longform-with-codex/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/library/ai-voice-before-after/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/library/codex-book-rewrite/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/resources/page.tsx", import.meta.url), "utf8"),
   ]);
 

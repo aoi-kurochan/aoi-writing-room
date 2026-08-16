@@ -37,34 +37,42 @@ export default function Home() {
       </section>
 
       <div className="home-shell">
-        <section className="start-guide" aria-labelledby="start-guide">
-          <div className="section-heading">
-            <p>今回のアップデート</p>
-            <h2 id="start-guide">今回追加した内容を、順番に確認する</h2>
+        <section className="latest-update" aria-labelledby="latest-update">
+          <div className="latest-update-copy">
+            <p>最新アップデート</p>
+            <h2 id="latest-update">1年前の本を、いまの基準で育て直す</h2>
+            <p>
+              Codexを使って、既刊5冊をリライトしました。本文だけではなく、監査、挿絵、巻末導線、
+              最終DOCXまで進めた実例を、5つのPHASEで紹介します。
+            </p>
+            <div className="latest-update-actions">
+              <Link href="/library/codex-book-rewrite">実録記事を読む →</Link>
+              <MarkdownDownload
+                content={downloadContent["08-codex-book-rewrite-starter-kit.md"]}
+                fileName="08_Codex既刊リライト開始キット.md"
+              >
+                開始キットをダウンロード ↓
+              </MarkdownDownload>
+            </div>
           </div>
-          <p className="start-guide-intro">
-            今回追加した2つの記事と配布ファイルを、原稿制作の流れに沿って確認できる順番です。
-          </p>
-          <ol className="start-steps">
-            <li><span>1</span><p><b><Link href="/library/longform-with-codex#workflow-overview">1冊を仕上げる現在の流れを知る →</Link></b>最初に、8つの工程で全体像を確認します。</p></li>
-            <li><span>2</span><p><b><Link href="/library/longform-with-codex#voice">音声入力で、自分の経験や判断を原稿の材料にする →</Link></b>5分を目安に話し、タイピングだけでは省きやすい背景や迷いを残します。</p></li>
-            <li><span>3</span><p><b><Link href="/library/longform-with-codex#markdown">2種類のMarkdownで、文章の個性と品質を安定させる →</Link></b>すべての本で守るルールと、その本だけのルールを分け、AIが前提を取り違えにくい状態を作ります。</p></li>
-            <li><span>4</span><p><b><Link href="/library/ai-voice-before-after#examples">AIっぽさを消す判断基準を、実例で確認する →</Link></b>AIの案と完成稿を比べ、何を直し、何を残したのかを確認します。</p></li>
-            <li><span>5</span><p><b><Link href="/resources#resource-06">公開前に、自分の目で事実・日本語・安全性を確認する →</Link></b>AIのレビューだけで終わらせず、出版前チェックリストで最終確認します。</p></li>
-          </ol>
+          <div className="latest-update-points" aria-label="今回できるようになったこと">
+            <span>本文と現在仕様を見直す</span>
+            <span>別の監査役で全体を確認する</span>
+            <span>挿絵と巻末まで整える</span>
+          </div>
         </section>
 
         <section aria-labelledby="new-articles">
           <div className="section-heading with-action">
             <div>
-              <p>今回のアップデート</p>
-              <h2 id="new-articles">今回追加した実践記事</h2>
+              <p>記事ライブラリ</p>
+              <h2 id="new-articles">これまでの実践記事</h2>
             </div>
             <Link href="/library">追加実践記事をすべて見る →</Link>
           </div>
 
           <div className="article-grid">
-            {articles.slice(0, 3).map((article, index) => (
+            {articles.slice(0, 2).map((article, index) => (
               <Link
                 className={`article-card ${index === 0 ? "article-card-primary" : ""}`}
                 href={article.href}

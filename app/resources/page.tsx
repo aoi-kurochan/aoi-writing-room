@@ -41,7 +41,7 @@ export default function Resources() {
               <dl>
                 <div><dt>使うタイミング</dt><dd>{item.timing}</dd></div>
                 <div><dt>使い方</dt><dd>{item.editing}</dd></div>
-                <div><dt>検証・版</dt><dd>2026年7月／{item.version}</dd></div>
+                <div><dt>検証・版</dt><dd>{item.verified}／{item.version}</dd></div>
               </dl>
               <ol>
                 {item.steps.map((step) => <li key={step}>{step}</li>)}
