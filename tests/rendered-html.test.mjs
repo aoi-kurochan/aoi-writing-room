@@ -147,12 +147,20 @@ test("keeps the Codex rewrite article factual and actionable", async () => {
   assert.match(article, /PHASE 5/);
   assert.match(article, /Codexに任せたこと/);
   assert.match(article, /私が決めたこと/);
+  assert.match(article, /Amazonレビューも、匿名化してから確認する/);
+  assert.match(article, /投稿者名、プロフィール画像、IDなど個人につながる情報を外し/);
+  assert.match(article, /絶対修正/);
+  assert.match(article, /修正検討/);
+  assert.match(article, /要検討/);
   assert.match(article, /名前の部分を消せば良いでしょう/);
   assert.match(article, /ChatGPTの文章は下書きとして受け取り/);
   assert.match(article, /少しずつ1記事へ近づいていけます/);
   assert.match(article, /32節に1枚ずつ/);
   assert.match(article, /合計34枚/);
   assert.match(article, /最初の今日はSTEP1〜3までで十分です/);
+  assert.match(article, /既刊（すでに出版した本）/);
+  assert.match(article, /Kindle Unlimitedで読まれたページ数（KENP）/);
+  assert.match(article, /最終的なWordファイル/);
   assert.doesNotMatch(article, /リライトすれば印税が増える/);
   assert.doesNotMatch(article, /980円の単体/);
   assert.match(library, /出版後に育てる/);
@@ -160,6 +168,20 @@ test("keeps the Codex rewrite article factual and actionable", async () => {
   assert.match(resources, /08/);
   assert.match(resources, /Codex既刊リライト開始キット/);
   assert.match(resources, /2026年8月[\s\S]{0,50}v1\.0/);
+});
+
+test("keeps the rewrite article self-contained", async () => {
+  const response = await render("/library/codex-book-rewrite");
+  const html = await response.text();
+  const outboundAnchors = [...html.matchAll(/<a\b[^>]*\bhref="([^"]+)"/g)]
+    .map((match) => match[1])
+    .filter((href) => !href.startsWith("#"));
+
+  assert.deepEqual(outboundAnchors, []);
+  assert.doesNotMatch(html, /サイト内メニュー/);
+  assert.doesNotMatch(html, /aoi-books/);
+  assert.doesNotMatch(html, /developers\.openai\.com/);
+  assert.match(html, /このページと開始キットだけで/);
 });
 
 test("keeps the approved article 02 language and source labels", async () => {
