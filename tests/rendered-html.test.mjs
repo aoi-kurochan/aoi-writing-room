@@ -142,13 +142,15 @@ test("keeps the Codex rewrite article factual and actionable", async () => {
     resourcesResponse.text(),
   ]);
 
-  assert.match(article, /旧版（v4）→ 作業版（v5）→ 完成版（v8）/);
-  assert.match(article, /STEP 1/);
-  assert.match(article, /STEP 5/);
+  assert.match(article, /全体像を理解するための5つの流れ/);
+  assert.match(article, /実際に作業するための実践8STEP/);
+  assert.match(article, /5つの流れ・1/);
+  assert.match(article, /5つの流れ・5/);
   assert.match(article, /Codexに任せたこと/);
   assert.match(article, /私が決めたこと/);
-  assert.match(article, /最初にAmazonレビューも確認します/);
-  assert.match(article, /投稿者名、プロフィール画像、IDなど、\s*個人を特定できる情報を外し/);
+  assert.match(article, /標準手順として、Amazonレビューも確認する/);
+  assert.match(article, /この本では最初の工程として明確には行っていない/);
+  assert.match(article, /投稿者名、プロフィール画像、IDなど、\s*個人につながる情報は必ず除きます/);
   assert.match(article, /絶対修正/);
   assert.match(article, /修正検討/);
   assert.match(article, /要検討/);
@@ -158,19 +160,54 @@ test("keeps the Codex rewrite article factual and actionable", async () => {
   assert.match(article, /32節に1枚ずつ/);
   assert.match(article, /合計34枚/);
   assert.match(article, /最初の日は、ここまでで十分です/);
-  assert.match(article, /既刊（すでに出版した本）/);
-  assert.match(article, /Kindle Unlimitedで読まれたページ数（KENP）/);
+  assert.match(article, /すでに出版しているKindle本を5冊リライト/);
   assert.match(article, /最終的なWordファイル/);
   assert.doesNotMatch(article, /リライトすれば印税が増える/);
   assert.doesNotMatch(article, /980円の単体/);
   assert.match(article, /codex-rewrite\/illustrations-34\.webp/);
   assert.match(article, /codex-rewrite\/related-books-2\.webp/);
   assert.match(article, /codex-rewrite\/bookshelf\.webp/);
+  assert.doesNotMatch(article, /codex-rewrite\/word-page-before\.webp/);
+  assert.match(article, /Kindleから開けることを確認したAmazonの短縮URL/);
+  assert.match(article, /完成版の巻末/);
+  assert.doesNotMatch(article, /完成版v8の巻末/);
   assert.match(library, /出版後に育てる/);
   assert.match(library, /codex-book-rewrite/);
   assert.match(resources, /08/);
   assert.match(resources, /Codex既刊リライト開始キット/);
   assert.match(resources, /2026年8月[\s\S]{0,50}v1\.0/);
+});
+
+test("keeps the starter kit distinct from the article flow", async () => {
+  const downloadContent = JSON.parse(
+    await readFile(new URL("../app/_data/download-content.json", import.meta.url), "utf8"),
+  );
+  const kit = downloadContent["08-codex-book-rewrite-starter-kit.md"];
+
+  assert.match(kit, /Web記事は、作業の全体像を理解するための「5つの流れ」/);
+  assert.match(kit, /実際に手を動かすための「実践8STEP」/);
+  assert.match(kit, /最初の10分コース/);
+  assert.match(kit, /KENPは、Kindle Unlimitedで読まれたページ数/);
+  assert.match(kit, /最初に必須/);
+  assert.match(kit, /ある人・必要な人だけ/);
+  assert.match(kit, /実践STEP1/);
+  assert.match(kit, /実践STEP8/);
+  assert.match(kit, /構成案を承認した後の依頼文/);
+  assert.match(kit, /代表となる挿絵を1枚だけ作ってください/);
+  assert.match(kit, /巻末を更新する作業用Wordファイル（DOCX）/);
+  assert.match(kit, /運営会社や公的機関が公開している一次情報を確認してください/);
+  assert.match(kit, /現在の内容、確認日、参照した公式URL、旧版との違い/);
+  assert.match(kit, /Kindleから開けることを確認したAmazonの短縮URL/);
+  assert.match(kit, /実際のKindle環境から短縮URLを開ける/);
+  assert.match(kit, /このSTEPの目的/);
+  assert.match(kit, /飛ばしてよい人/);
+});
+
+test("keeps the rewrite candidate lists unbulleted", async () => {
+  const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+
+  assert.match(css, /\.check-grid ul \{ margin: 0; padding: 0; list-style: none; \}/);
+  assert.doesNotMatch(css, /\.check-grid li::marker/);
 });
 
 test("keeps the rewrite article self-contained", async () => {
