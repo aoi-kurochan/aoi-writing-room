@@ -22,7 +22,7 @@ for (const [path, expected] of [
   ["/resources", "原稿制作で使えるテンプレート"],
   ["/library/longform-with-codex", "AIで長文原稿を1冊仕上げる、現在の制作フロー"],
   ["/library/ai-voice-before-after", "あおいの原稿ビフォー・アフター"],
-  ["/library/codex-book-rewrite", "1年前の本を、いまの基準で育て直す。Codex既刊リライトの実録"],
+  ["/library/codex-book-rewrite", "1年前の本を、今の基準でリライトする。Codex活用術"],
 ]) {
   test(`server-renders ${path}`, async () => {
     const response = await render(path);
@@ -86,8 +86,8 @@ test("shows the latest update and direct action links", async () => {
   assert.match(html, /購入者限定・本編アップデート/);
   assert.match(html, /毎月25万円の印税が振り込まれるまでにやったこと、全部書きました/);
   assert.match(html, /最新アップデート/);
-  assert.match(html, /1年前の本を、いまの基準で育て直す/);
-  assert.match(html, /href="\/library\/codex-book-rewrite\/?"/);
+  assert.match(html, /1年前の本を、今の基準でリライトする/);
+  assert.match(html, /href="(?:\/aoi-writing-room)?\/library\/codex-book-rewrite\/?"/);
   assert.match(html, /開始キットをダウンロード/);
   assert.match(html, /AIで長文原稿を1冊仕上げる、現在の制作フロー/);
   assert.match(html, /これまでの実践記事/);
@@ -142,13 +142,13 @@ test("keeps the Codex rewrite article factual and actionable", async () => {
     resourcesResponse.text(),
   ]);
 
-  assert.match(article, /旧版v4 → 作業版v5 → 完成版v8/);
-  assert.match(article, /PHASE 1/);
-  assert.match(article, /PHASE 5/);
+  assert.match(article, /旧版（v4）→ 作業版（v5）→ 完成版（v8）/);
+  assert.match(article, /STEP 1/);
+  assert.match(article, /STEP 5/);
   assert.match(article, /Codexに任せたこと/);
   assert.match(article, /私が決めたこと/);
-  assert.match(article, /Amazonレビューも、匿名化してから確認する/);
-  assert.match(article, /投稿者名、プロフィール画像、IDなど個人につながる情報を外し/);
+  assert.match(article, /最初にAmazonレビューも確認します/);
+  assert.match(article, /投稿者名、プロフィール画像、IDなど、\s*個人を特定できる情報を外し/);
   assert.match(article, /絶対修正/);
   assert.match(article, /修正検討/);
   assert.match(article, /要検討/);
@@ -157,12 +157,15 @@ test("keeps the Codex rewrite article factual and actionable", async () => {
   assert.match(article, /少しずつ1記事へ近づいていけます/);
   assert.match(article, /32節に1枚ずつ/);
   assert.match(article, /合計34枚/);
-  assert.match(article, /最初の今日はSTEP1〜3までで十分です/);
+  assert.match(article, /最初の日は、ここまでで十分です/);
   assert.match(article, /既刊（すでに出版した本）/);
   assert.match(article, /Kindle Unlimitedで読まれたページ数（KENP）/);
   assert.match(article, /最終的なWordファイル/);
   assert.doesNotMatch(article, /リライトすれば印税が増える/);
   assert.doesNotMatch(article, /980円の単体/);
+  assert.match(article, /codex-rewrite\/illustrations-34\.webp/);
+  assert.match(article, /codex-rewrite\/related-books-2\.webp/);
+  assert.match(article, /codex-rewrite\/bookshelf\.webp/);
   assert.match(library, /出版後に育てる/);
   assert.match(library, /codex-book-rewrite/);
   assert.match(resources, /08/);
@@ -177,11 +180,11 @@ test("keeps the rewrite article self-contained", async () => {
     .map((match) => match[1])
     .filter((href) => !href.startsWith("#"));
 
-  assert.deepEqual(outboundAnchors, []);
+  assert.deepEqual(outboundAnchors, ["https://aoi-kurochan.github.io/aoi-books/"]);
   assert.doesNotMatch(html, /サイト内メニュー/);
-  assert.doesNotMatch(html, /aoi-books/);
+  assert.match(html, /aoi-books/);
   assert.doesNotMatch(html, /developers\.openai\.com/);
-  assert.match(html, /このページと開始キットだけで/);
+  assert.match(html, /このページと開始キットを使って、既刊1冊のリライトを始められる/);
 });
 
 test("keeps the approved article 02 language and source labels", async () => {

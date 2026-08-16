@@ -83,7 +83,7 @@ export const articles = [
     number: "03",
     slug: "codex-book-rewrite",
     href: "/library/codex-book-rewrite",
-    title: "1年前の本を、いまの基準で育て直す。Codex既刊リライトの実録",
+    title: "1年前の本を、今の基準でリライトする。Codex活用術",
     summary:
       "価値の残る既刊を選び、本文、監査、挿絵、巻末、最終DOCXまで育て直した実例を、Codexに任せたことと著者が決めたことに分けて紹介します。",
     originLabel: "現在の既刊リライト実務を反映",

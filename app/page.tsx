@@ -40,10 +40,10 @@ export default function Home() {
         <section className="latest-update" aria-labelledby="latest-update">
           <div className="latest-update-copy">
             <p>最新アップデート</p>
-            <h2 id="latest-update">1年前の本を、いまの基準で育て直す</h2>
+            <h2 id="latest-update">1年前の本を、今の基準でリライトする</h2>
             <p>
               Codexを使って、既刊5冊をリライトしました。本文だけではなく、監査、挿絵、巻末導線、
-              最終DOCXまで進めた実例を、5つのPHASEで紹介します。
+              最終DOCXまで進めた実例を、5つのSTEPで紹介します。
             </p>
             <div className="latest-update-actions">
               <Link href="/library/codex-book-rewrite">実録記事を読む →</Link>
