@@ -159,7 +159,7 @@ test("keeps the Codex rewrite article factual and actionable", async () => {
   assert.match(article, /少しずつ1記事へ近づいていけます/);
   assert.match(article, /32節に1枚ずつ/);
   assert.match(article, /合計34枚/);
-  assert.match(article, /最初の日は、ここまでで十分です/);
+  assert.match(article, /ここまでできれば、リライトを始める準備は十分です/);
   assert.match(article, /すでに出版しているKindle本を5冊リライト/);
   assert.match(article, /最終的なWordファイル/);
   assert.doesNotMatch(article, /リライトすれば印税が増える/);
