@@ -90,6 +90,7 @@ export default function CodexBookRewrite() {
         <p>この本のテーマには、今も需要があると思っていました。一方で、ChatGPTもnoteも変化しています。古い内容のまま本を出し続けることに、読者への申し訳なさを感じていました。少しずつ印税が落ちていたこともあり、前々から直したいと思っていた本です。</p>
         <p>ただ、1冊を最初から読み返し、どこが古くなっているのかを調べ、本文を直し、全体のつながりまで確認するのは、本業がある中では重い作業です。直したいとは思いながら、長い間そのままになっていました。</p>
         <p>それが今回、Codexを使うことでようやく着手できたので、その方法を皆さんにぜひ共有したいと思います。この記事では、最初からきれいに進んだようには書きません。何を残すと決め、どこで失敗し、何をCodexへ任せ、何を自分で判断したのかを、実物と一緒に紹介します。</p>
+        <p>同じ内容を、Brain版でもご覧いただけます。<br /><a className="text-link" href="https://brain-market.com/u/pokopen8866/a/b2gTMyYjMgoTZsNWa0JXY?free_pass=cS3lBEyyYEoSKYhj-zO1VQ" target="_blank" rel="noreferrer">Brain版はこちらからご確認ください。</a><br />このリンクを第三者へ転送することはお控えください。</p>
       </section>
 
       <StarterKitButton className="article-tool-cta-top" />

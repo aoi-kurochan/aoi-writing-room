@@ -217,8 +217,12 @@ test("keeps the rewrite article self-contained", async () => {
     .map((match) => match[1])
     .filter((href) => !href.startsWith("#"));
 
-  assert.deepEqual(outboundAnchors, ["https://aoi-kurochan.github.io/aoi-books/"]);
+  assert.deepEqual(outboundAnchors, [
+    "https://brain-market.com/u/pokopen8866/a/b2gTMyYjMgoTZsNWa0JXY?free_pass=cS3lBEyyYEoSKYhj-zO1VQ",
+    "https://aoi-kurochan.github.io/aoi-books/",
+  ]);
   assert.doesNotMatch(html, /サイト内メニュー/);
+  assert.match(html, /このリンクを第三者へ転送することはお控えください/);
   assert.match(html, /aoi-books/);
   assert.doesNotMatch(html, /developers\.openai\.com/);
   assert.match(html, /このページと開始キットを使って、既刊1冊のリライトを始められる/);
