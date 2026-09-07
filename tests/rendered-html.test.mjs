@@ -80,17 +80,23 @@ test("contains no starter preview markers", async () => {
 });
 
 test("shows the latest update and direct action links", async () => {
-  const response = await render("/");
-  const html = await response.text();
+  const [response, libraryResponse] = await Promise.all([render("/"), render("/library")]);
+  const [html, library] = await Promise.all([response.text(), libraryResponse.text()]);
 
   assert.match(html, /購入者限定・本編アップデート/);
   assert.match(html, /毎月25万円の印税が振り込まれるまでにやったこと、全部書きました/);
   assert.match(html, /最新アップデート/);
-  assert.match(html, /1年前の本を、今の基準でリライトする/);
-  assert.match(html, /href="(?:\/aoi-writing-room)?\/library\/codex-book-rewrite\/?"/);
-  assert.match(html, /開始キットをダウンロード/);
+  assert.match(html, /書いた文章を、YouTube動画に変える方法/);
+  assert.match(html, /Brainの無料公開記事を読む/);
+  assert.match(
+    html,
+    /https:\/\/brain-market\.com\/u\/pokopen8866\/a\/bykDM0YjMgoTZsNWa0JXY\?free_pass=5K2HHAOG56k6D-r-m7avuQ/,
+  );
   assert.match(html, /AIで長文原稿を1冊仕上げる、現在の制作フロー/);
   assert.match(html, /これまでの実践記事/);
+  assert.match(library, /書いた文章を、YouTube動画に変える方法/);
+  assert.match(library, /Brainで無料公開中/);
+  assert.match(library, /1年前の本を、今の基準でリライトする。Codex活用術/);
   assert.doesNotMatch(html, /今回追加した2つの記事/);
   assert.doesNotMatch(html, /迷ったら、この順番で進んでください/);
 });

@@ -40,25 +40,25 @@ export default function Home() {
         <section className="latest-update" aria-labelledby="latest-update">
           <div className="latest-update-copy">
             <p>最新アップデート</p>
-            <h2 id="latest-update">1年前の本を、今の基準でリライトする</h2>
+            <h2 id="latest-update">書いた文章を、YouTube動画に変える方法</h2>
             <p>
-              Codexを使って、既刊5冊をリライトしました。本文だけではなく、監査、挿絵、巻末導線、
-              最終DOCXまで進めた実例を、5つのSTEPで紹介します。
+              Kindleやnoteなど、すでにある文章から、長尺動画1本を作り、
+              必要ならショート動画にも展開する手順をまとめました。
             </p>
             <div className="latest-update-actions">
-              <Link href="/library/codex-book-rewrite">実録記事を読む →</Link>
-              <MarkdownDownload
-                content={downloadContent["08-codex-book-rewrite-starter-kit.md"]}
-                fileName="08_Codex既刊リライト開始キット.md"
+              <Link
+                href="https://brain-market.com/u/pokopen8866/a/bykDM0YjMgoTZsNWa0JXY?free_pass=5K2HHAOG56k6D-r-m7avuQ"
+                target="_blank"
+                rel="noreferrer"
               >
-                開始キットをダウンロード ↓
-              </MarkdownDownload>
+                Brainの無料公開記事を読む →
+              </Link>
             </div>
           </div>
           <div className="latest-update-points" aria-label="今回できるようになったこと">
-            <span>本文と現在仕様を見直す</span>
-            <span>別の監査役で全体を確認する</span>
-            <span>挿絵と巻末まで整える</span>
+            <span>元文章から台本を作る</span>
+            <span>画面・音声・字幕を作る</span>
+            <span>長尺公開後、必要ならショートへ展開する</span>
           </div>
         </section>
 

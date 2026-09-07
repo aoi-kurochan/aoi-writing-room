@@ -95,6 +95,22 @@ export const articles = [
     environment: "Mac／Codexデスクトップアプリ",
     status: "既刊5冊で実施",
   },
+  {
+    number: "04",
+    slug: "writing-to-youtube",
+    href: "https://brain-market.com/u/pokopen8866/a/bykDM0YjMgoTZsNWa0JXY?free_pass=5K2HHAOG56k6D-r-m7avuQ",
+    title: "書いた文章を、YouTube動画に変える方法",
+    summary:
+      "Kindleやnoteなど、すでにある文章から長尺動画を作り、必要ならショート動画にも展開する手順を紹介します。",
+    originLabel: "Brainで無料公開中",
+    primaryCategory: "出版後に育てる",
+    categoryId: "grow",
+    tags: ["企画・素材を固める", "本文を書く"],
+    chapters: "第10章",
+    verified: "2026年9月",
+    environment: "Mac／CodexまたはClaude Code",
+    status: "Brainで無料公開中",
+  },
 ] as const;
 
 export const downloads = [
