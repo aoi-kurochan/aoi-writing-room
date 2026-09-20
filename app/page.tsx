@@ -37,9 +37,13 @@ export default function Home() {
       </section>
 
       <div className="home-shell">
+        <section className="latest-update" aria-labelledby="ai-prompts-update">
+          <div className="section-heading"><div><p>最新アップデート</p><h2 id="ai-prompts-update">いま実際に使っている、AIへの頼み方24選</h2><p>AIに仕事を頼むとき、文章や画像を直すとき、作業を進めるとき。いま困っていることに合う一言から使ってみてください。</p><a href="/aoi-writing-room/library/ai-prompts/">記事を読む →</a></div></div>
+        </section>
+
         <section className="latest-update" aria-labelledby="latest-update">
           <div className="latest-update-copy">
-            <p>最新アップデート</p>
+            <p>これまでのアップデート</p>
             <h2 id="latest-update">書いた文章を、YouTube動画に変える方法</h2>
             <p>
               Kindleやnoteなど、すでにある文章から、長尺動画1本を作り、
