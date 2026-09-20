@@ -111,6 +111,21 @@ export const articles = [
     environment: "Mac／CodexまたはClaude Code",
     status: "Brainで無料公開中",
   },
+  {
+    number: "05",
+    slug: "ai-prompts",
+    href: "/library/ai-prompts/",
+    title: "いま実際に使っている、AIへの頼み方24選",
+    summary: "仕事を頼む、文章や画像を作る・直す、作業を進めてルールを残す。3つの用途に分けて、実際に使っている依頼文と使い方を紹介します。",
+    originLabel: "2026年9月追加",
+    primaryCategory: "編集・レビューする",
+    categoryId: "review",
+    tags: ["本文を書く", "文章を作り込む"],
+    chapters: "第3章〜第5章",
+    verified: "2026年9月",
+    environment: "文章・画像制作などでのAIとのやり取り",
+    status: "現在も使用中",
+  },
 ] as const;
 
 export const downloads = [

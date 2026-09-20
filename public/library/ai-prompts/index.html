@@ -1,0 +1,1076 @@
+<!doctype html><html lang="ja"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>いま実際に使っている、AIへの頼み方24選 | あおい執筆室</title><style>
+
+:root {
+  --ink: #17364a;
+  --text: #2f4c5e;
+  --muted: #6c8290;
+  --blue: #3d8eaf;
+  --blue-deep: #1f6687;
+  --blue-soft: #e9f5fa;
+  --blue-faint: #f6fbfd;
+  --blue-line: #cee3ec;
+  --cream: #fffaf1;
+  --peach: #f6e5d3;
+  --paper: #ffffff;
+  --red-soft: #fff3f0;
+  --green-soft: #eef7f2;
+  --serif: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--blue-faint); }
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--paper);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.95;
+  letter-spacing: 0.015em;
+}
+a { color: inherit; text-decoration: none; }
+p,
+li,
+dd,
+h1,
+h2,
+h3 {
+  text-wrap: pretty;
+  word-break: auto-phrase;
+}
+code {
+  padding: 0.12em 0.4em;
+  border: 1px solid var(--blue-line);
+  border-radius: 4px;
+  background: var(--blue-faint);
+  color: var(--blue-deep);
+  font-size: 0.9em;
+}
+
+.site-header {
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid var(--blue-line);
+  background: rgba(255, 255, 255, 0.96);
+}
+.site-header-inner {
+  width: min(1080px, calc(100% - 40px));
+  min-height: 68px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.site-header small,
+.site-label {
+  padding: 5px 11px;
+  border: 1px solid var(--blue-line);
+  color: var(--blue-deep);
+  background: var(--blue-faint);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.site-brand { display: inline-flex; align-items: center; gap: 12px; }
+.site-brand span {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--blue-deep);
+  border-radius: 50%;
+  color: var(--blue-deep);
+  font-family: Georgia, serif;
+  font-size: 18px;
+}
+.site-brand b {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 15px;
+  letter-spacing: 0.06em;
+}
+.site-nav { display: flex; align-items: center; gap: 22px; }
+.site-nav > a { color: var(--blue-deep); font-size: 12px; font-weight: 700; }
+.site-nav > a:hover { text-decoration: underline; }
+
+.site-footer {
+  margin-top: 100px;
+  padding: 46px 20px;
+  border-top: 1px solid var(--blue-line);
+  background: var(--blue-faint);
+}
+.site-footer > div {
+  width: min(1080px, 100%);
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 36px;
+}
+.site-footer-heading { flex: 0 0 auto; }
+.site-footer b { display: block; color: var(--ink); font-family: var(--serif); font-size: 14px; }
+.site-footer span { display: block; margin-top: 3px; color: var(--muted); font-size: 11px; }
+.site-footer p {
+  max-width: 560px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+  text-align: right;
+}
+
+/* Top */
+.studio-hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--blue-line);
+  background:
+    linear-gradient(rgba(178, 214, 230, 0.26) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(178, 214, 230, 0.26) 1px, transparent 1px),
+    linear-gradient(115deg, #f8fcfe 0%, #eaf6fb 62%, #fff8ee 100%);
+  background-size: 34px 34px, 34px 34px, auto;
+}
+.studio-hero::after {
+  content: "";
+  position: absolute;
+  right: -70px;
+  bottom: -120px;
+  width: 420px;
+  height: 420px;
+  border: 1px solid rgba(61, 142, 175, 0.18);
+  border-radius: 50%;
+  box-shadow: 0 0 0 52px rgba(255,255,255,.25), 0 0 0 104px rgba(255,255,255,.18);
+}
+.studio-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(900px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 92px 0 88px;
+}
+.site-label { display: inline-block; margin: 0 0 18px; font-size: 16px; }
+.studio-hero h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(42px, 7vw, 64px);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+}
+.hero-lead {
+  max-width: 720px;
+  margin: 24px 0 0;
+  color: #4f7183;
+  font-size: 18px;
+  line-height: 2.05;
+}
+.hero-lead p { margin: 0; }
+.hero-lead p + p { margin-top: 14px; }
+.hero-principles { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.hero-principles span {
+  padding: 7px 12px;
+  border: 1px solid rgba(31,102,135,.22);
+  background: rgba(255,255,255,.72);
+  color: var(--blue-deep);
+  font-size: 12px;
+  font-weight: 700;
+}
+.home-shell { width: min(960px, calc(100% - 40px)); margin: 0 auto; padding: 86px 0 24px; }
+.home-shell > section + section { margin-top: 104px; }
+.section-heading { margin-bottom: 28px; }
+.section-heading > p {
+  margin: 0 0 6px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+.section-heading.with-action {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+}
+.section-heading.with-action > div > p {
+  margin: 0 0 6px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+.section-heading.with-action > a { color: var(--blue-deep); font-size: 13px; font-weight: 700; }
+.section-heading.with-action > a:hover { text-decoration: underline; }
+.section-heading h2 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(27px, 4vw, 34px);
+  font-weight: 600;
+}
+.section-intro { max-width: 680px; margin: -12px 0 28px; color: var(--muted); }
+.article-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.article-card {
+  min-height: 370px;
+  padding: 34px;
+  border: 1px solid var(--blue-line);
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.article-card-primary { background: linear-gradient(150deg, var(--blue-faint), #fff); }
+.article-card:hover { transform: translateY(-3px); border-color: #9dc9da; box-shadow: 0 16px 36px rgba(25,74,96,.08); }
+.article-number { color: var(--blue); font-family: Georgia, serif; font-size: 14px; letter-spacing: .14em; }
+.article-meta { margin: 0 0 10px; color: var(--muted); font-size: 11px; font-weight: 700; }
+.article-card h3 { margin: 0; color: var(--ink); font-family: var(--serif); font-size: 24px; line-height: 1.65; }
+.article-card p:not(.article-meta) { margin: 18px 0 20px; color: var(--muted); font-size: 14px; line-height: 1.85; }
+.article-related {
+  display: block;
+  margin: -8px 0 16px;
+  color: var(--blue-deep);
+  font-size: 10px;
+  font-weight: 700;
+}
+.article-card b { color: var(--blue-deep); font-size: 13px; }
+.article-card b span { margin-left: 6px; }
+.start-guide {
+  padding: 38px 40px;
+  border: 1px solid var(--blue-line);
+  background: linear-gradient(145deg, var(--blue-faint), #fff);
+}
+.start-guide-intro {
+  max-width: 720px;
+  margin: -12px 0 22px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.start-steps { margin: 0; padding: 0; list-style: none; }
+.start-steps li {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--blue-line);
+}
+.start-steps li > span {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--blue-line);
+  border-radius: 50%;
+  color: var(--blue-deep);
+  font-family: Georgia, serif;
+  font-size: 12px;
+}
+.start-steps p { margin: 0; color: var(--muted); font-size: 14px; }
+.start-steps b { display: block; color: var(--ink); font-size: 15px; }
+.start-steps b a { color: var(--blue-deep); }
+.start-steps b a:hover { text-decoration: underline; }
+.button-link {
+  display: inline-flex;
+  margin-top: 24px;
+  padding: 11px 18px;
+  background: var(--blue-deep);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+.category-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.category-card {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 15px;
+  padding: 25px 26px;
+  border: 1px solid var(--blue-line);
+  background: var(--paper);
+}
+.category-card:hover { border-color: #93c6da; background: var(--blue-faint); }
+.category-card > span { color: var(--blue); font-family: Georgia, serif; font-size: 11px; }
+.category-card h3 { margin: 0; color: var(--ink); font-family: var(--serif); font-size: 19px; }
+.category-card p { margin: 7px 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.category-card small { color: var(--blue-deep); font-size: 10px; font-weight: 700; }
+.map-table { border-top: 1px solid var(--blue-line); }
+.map-row {
+  display: grid;
+  grid-template-columns: 1.05fr 2fr .9fr;
+  align-items: center;
+  min-height: 68px;
+  border-bottom: 1px solid var(--blue-line);
+}
+.map-row > * { padding: 14px 16px; }
+.map-row > * + * { border-left: 1px solid var(--blue-line); }
+.map-row a { color: var(--blue-deep); font-weight: 700; }
+.map-row a:hover { text-decoration: underline; }
+.map-head { min-height: 48px; background: var(--blue-faint); color: var(--ink); font-size: 12px; font-weight: 700; }
+.download-library { scroll-margin-top: 30px; }
+.download-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.download-card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 34px 1fr 24px;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 22px;
+  border: 1px solid var(--blue-line);
+  background: var(--blue-faint);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.download-card:hover { border-color: #93c6da; background: var(--blue-soft); }
+.download-card > span { color: var(--blue); font-family: Georgia, serif; font-size: 11px; }
+.download-card b,
+.download-card small { display: block; }
+.download-card b { color: var(--ink); font-size: 14px; }
+.download-card small { margin-top: 2px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.download-card i { color: var(--blue-deep); font-size: 18px; font-style: normal; text-align: right; }
+
+.inline-resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  margin: 22px 0;
+}
+.inline-resource-links a {
+  color: var(--blue-deep);
+  font-size: 14px;
+  font-weight: 700;
+}
+.inline-resource-links a:hover { text-decoration: underline; }
+
+/* Article */
+.article-shell { width: min(820px, calc(100% - 40px)); margin: 0 auto; padding: 38px 0 0; }
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 48px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.breadcrumb a { color: var(--blue-deep); }
+.article-header { padding-bottom: 52px; border-bottom: 1px solid var(--blue-line); }
+.article-kicker { margin: 0 0 12px; color: var(--blue); font-size: 13px; font-weight: 700; letter-spacing: .12em; }
+.article-header h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(34px, 6vw, 50px);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: .025em;
+}
+.article-summary { margin: 24px 0 0; color: #4f6c7c; font-size: 19px; line-height: 2; }
+.article-summary p { margin: 0; }
+.article-summary p + p { margin-top: 14px; }
+.article-context {
+  margin: 24px 0 0;
+  padding: 18px 20px;
+  border-left: 3px solid var(--blue);
+  background: var(--blue-faint);
+  color: #4f6c7c;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.article-facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin: 34px 0 0;
+  border: 1px solid var(--blue-line);
+  background: var(--blue-faint);
+}
+.article-facts > div { padding: 15px 17px; }
+.article-facts > div + div { border-left: 1px solid var(--blue-line); }
+.article-facts dt { color: var(--muted); font-size: 10px; font-weight: 700; }
+.article-facts dd { margin: 4px 0 0; color: var(--ink); font-size: 12px; line-height: 1.6; }
+.toc { margin: 42px 0 78px; padding: 22px 26px; border: 1px solid var(--blue-line); background: var(--blue-faint); }
+.toc summary { cursor: pointer; color: var(--ink); font-weight: 700; }
+.toc ol { margin: 16px 0 0; padding-left: 1.5em; }
+.toc li { margin: 5px 0; color: var(--blue-deep); font-size: 14px; }
+.toc a:hover { text-decoration: underline; }
+.article-shell > section,
+.article-shell > .case-example { margin-top: 90px; scroll-margin-top: 32px; }
+.article-shell section > h2:not(.case-example h2),
+.case-intro h2,
+.anti-ai-check h2,
+.case-conclusion h2 {
+  margin: 0 0 28px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(27px, 4vw, 34px);
+  font-weight: 600;
+  line-height: 1.6;
+}
+.article-shell section > h2 > span {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  margin-right: 12px;
+  place-items: center;
+  border: 1px solid var(--blue-line);
+  color: var(--blue);
+  font-family: Georgia, serif;
+  font-size: 14px;
+  vertical-align: 5px;
+}
+.article-shell section > p { margin: 0 0 24px; }
+.article-shell h3 { color: var(--ink); font-size: 17px; }
+.article-shell ul { padding-left: 1.25em; }
+.article-shell li { margin: 7px 0; }
+.article-shell blockquote {
+  margin: 32px 0;
+  padding: 26px 30px;
+  border-left: 3px solid var(--blue);
+  background: var(--blue-faint);
+  color: #35566a;
+}
+.note-box,
+.warning-box,
+.lesson-box {
+  margin: 34px 0;
+  padding: 24px 28px;
+  border: 1px solid var(--blue-line);
+  background: var(--cream);
+}
+.note-box b,
+.warning-box b,
+.lesson-box b { color: var(--ink); }
+.note-box p,
+.warning-box p,
+.lesson-box p { margin: 8px 0 0; }
+.warning-box { border-color: #edc9bd; background: var(--red-soft); }
+.two-column,
+.rule-pair,
+.review-levels { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 30px 0; }
+.two-column > div,
+.rule-pair > div,
+.review-levels > div { padding: 24px 26px; border: 1px solid var(--blue-line); background: var(--blue-faint); }
+.two-column h3,
+.rule-pair h3 { margin: 0; }
+.two-column ul { margin-bottom: 0; }
+.rule-label { margin: 0 0 4px !important; color: var(--blue); font-size: 10px; font-weight: 700; letter-spacing: .14em; }
+.rule-pair p:last-child { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+.steps { margin: 28px 0; padding: 0; list-style: none; counter-reset: step; }
+.steps li {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
+  margin: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--blue-line);
+}
+.steps b { color: var(--ink); }
+.steps span { color: var(--muted); }
+.timeline { margin: 34px 0; padding: 0; list-style: none; }
+.timeline li {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 20px;
+  margin: 0;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--blue-line);
+}
+.timeline li > span { color: var(--blue); font-family: Georgia, serif; font-size: 13px; letter-spacing: .08em; }
+.timeline b { color: var(--ink); font-size: 18px; }
+.timeline p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+.review-levels { grid-template-columns: repeat(3, 1fr); }
+.review-levels > div { padding: 22px 20px; }
+.review-levels span { display: block; color: var(--blue); font-family: Georgia, serif; font-size: 12px; }
+.review-levels b { display: block; margin-top: 3px; color: var(--ink); font-size: 15px; }
+.review-levels p { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.text-link { display: inline-block; margin-top: 8px; color: var(--blue-deep); font-weight: 700; }
+.text-link:hover { text-decoration: underline; }
+.article-end { margin-top: 90px; padding: 24px 0; border-top: 1px solid var(--blue-line); color: var(--muted); font-size: 11px; }
+.article-end p { margin: 2px 0; }
+.question-map {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 32px 0;
+}
+.question-map article {
+  padding: 22px 20px;
+  border: 1px solid var(--blue-line);
+  background: var(--blue-faint);
+}
+.question-map article > span,
+.artifact-label {
+  color: var(--blue-deep);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+.question-map h3 { margin: 7px 0 10px; font-size: 15px; line-height: 1.65; }
+.question-map p { margin: 0 0 12px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.question-map small { color: var(--blue-deep); font-size: 10px; font-weight: 700; }
+.artifact-stack { margin: 34px 0; }
+.artifact-stack > article {
+  padding: 26px 28px;
+  border: 1px solid var(--blue-line);
+  background: #fff;
+}
+.artifact-stack > article + article { border-top: 0; }
+.artifact-stack blockquote { margin: 12px 0 18px; }
+.artifact-stack article > p:last-child { margin-bottom: 0; color: var(--muted); font-size: 13px; }
+.structure-diff {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  gap: 12px;
+  align-items: stretch;
+  margin: 34px 0;
+}
+.structure-diff > div { padding: 24px 26px; border: 1px solid var(--blue-line); background: var(--cream); }
+.structure-diff > span { display: grid; place-items: center; color: var(--blue); font-size: 20px; }
+.structure-diff h3 { margin: 5px 0 10px; line-height: 1.65; }
+.structure-diff p:last-child { margin: 0; color: var(--muted); font-size: 13px; }
+.review-comparison { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 28px 0; }
+.review-comparison article { padding: 20px; border: 1px solid var(--blue-line); background: var(--blue-faint); }
+.review-comparison article b { color: var(--ink); font-size: 13px; }
+.review-comparison article p { margin: 8px 0 0; color: var(--muted); font-size: 12px; line-height: 1.75; }
+.review-comparison .review-decision { grid-column: 1 / -1; border-left: 3px solid var(--blue); background: var(--cream); }
+.next-reading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  margin-top: 28px;
+}
+.next-reading a { color: var(--blue-deep); font-size: 13px; font-weight: 700; }
+.next-reading a:hover { text-decoration: underline; }
+
+/* Index pages */
+.index-shell { width: min(920px, calc(100% - 40px)); margin: 0 auto; padding: 38px 0 0; }
+.index-header { max-width: 760px; padding: 20px 0 58px; border-bottom: 1px solid var(--blue-line); }
+.index-header h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(34px, 6vw, 48px);
+  font-weight: 600;
+  line-height: 1.5;
+}
+.index-header > p:not(.article-kicker) { margin: 22px 0 0; color: var(--muted); }
+.index-header > p:not(.article-kicker) + p { margin-top: 10px; }
+.library-sections,
+.resource-list { margin-top: 70px; }
+.library-category { padding: 36px 0; scroll-margin-top: 24px; border-bottom: 1px solid var(--blue-line); }
+.library-category > header { display: flex; justify-content: space-between; gap: 24px; align-items: end; }
+.library-category > header p { margin: 0 0 3px; color: var(--blue); font-size: 10px; font-weight: 700; }
+.library-category h2 { margin: 0; color: var(--ink); font-family: var(--serif); font-size: 28px; font-weight: 600; }
+.library-category > header > span { color: var(--muted); font-size: 11px; }
+.category-description { margin: 10px 0 22px; color: var(--muted); font-size: 14px; }
+.library-row {
+  display: grid;
+  grid-template-columns: 34px 1fr 28px;
+  gap: 15px;
+  align-items: center;
+  padding: 24px;
+  border: 1px solid var(--blue-line);
+  background: var(--blue-faint);
+}
+.library-row > span { color: var(--blue); font-family: Georgia, serif; font-size: 11px; }
+.library-row h3 { margin: 0; color: var(--ink); font-family: var(--serif); font-size: 20px; }
+.library-row p { margin: 7px 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.library-row small { color: var(--blue-deep); font-size: 10px; }
+.library-row > b { color: var(--blue-deep); }
+.empty-category { margin: 0; padding: 18px 20px; border: 1px dashed var(--blue-line); color: var(--muted); font-size: 13px; }
+.upcoming-categories {
+  margin-top: 70px;
+  padding: 30px 32px;
+  border: 1px solid var(--blue-line);
+  background: var(--blue-faint);
+}
+.upcoming-categories > p {
+  margin: 0;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+}
+.upcoming-categories h2 {
+  margin: 4px 0 20px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 23px;
+}
+.upcoming-categories > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.upcoming-categories > div > div {
+  padding: 13px 15px;
+  border: 1px solid var(--blue-line);
+  background: #fff;
+  scroll-margin-top: 24px;
+}
+.upcoming-categories b,
+.upcoming-categories span { display: block; }
+.upcoming-categories b { color: var(--ink); font-size: 13px; }
+.upcoming-categories span { margin-top: 2px; color: var(--muted); font-size: 10px; }
+.resource-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+.resource-card {
+  width: 100%;
+  min-width: 0;
+  padding: 30px 32px;
+  border: 1px solid var(--blue-line);
+  scroll-margin-top: 24px;
+}
+.resource-card > header { display: grid; grid-template-columns: 40px 1fr; gap: 15px; }
+.resource-card > header > div { min-width: 0; }
+.resource-card > header > span { color: var(--blue); font-family: Georgia, serif; font-size: 12px; }
+.resource-card h2 { margin: 0; color: var(--ink); font-family: var(--serif); font-size: 24px; }
+.resource-card header p { margin: 6px 0 0; color: var(--muted); font-size: 13px; }
+.resource-card dl {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 24px 0 18px;
+  border: 1px solid var(--blue-line);
+  background: var(--blue-faint);
+}
+.resource-card dl > div { padding: 13px 15px; }
+.resource-card dl > div + div { border-left: 1px solid var(--blue-line); }
+.resource-card dt { color: var(--muted); font-size: 9px; font-weight: 700; }
+.resource-card dd { margin: 4px 0 0; color: var(--ink); font-size: 11px; line-height: 1.6; }
+.resource-card ol { margin: 0 0 22px; padding-left: 1.4em; color: var(--muted); font-size: 12px; }
+.resource-actions { display: flex; flex-wrap: wrap; gap: 10px 22px; }
+.resource-actions a,
+.resource-actions button { color: var(--blue-deep); font-size: 12px; font-weight: 700; }
+.resource-actions button:first-child {
+  padding: 8px 13px;
+  border: 0;
+  background: var(--blue-deep);
+  color: #fff;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Case study */
+.case-study-shell .article-header { margin-bottom: 84px; }
+.case-intro { padding: 32px 34px; border: 1px solid var(--blue-line); background: var(--blue-faint); }
+.case-intro h2 { font-size: 25px; }
+.case-intro p:last-child { margin-bottom: 0; }
+.case-group {
+  padding: 30px 34px;
+  border-top: 1px solid var(--blue-line);
+  border-bottom: 1px solid var(--blue-line);
+  background: linear-gradient(145deg, var(--blue-faint), #fff);
+}
+.case-group-label {
+  margin: 0 0 5px !important;
+  color: var(--blue);
+  font-family: Georgia, serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+.case-group h2 {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.case-group p:last-child { margin-bottom: 0; color: var(--muted); }
+.case-example { padding-top: 10px; border-top: 1px solid var(--blue-line); }
+.case-example > header { display: grid; grid-template-columns: 46px 1fr; gap: 16px; align-items: start; margin-bottom: 30px; }
+.case-example > header > span {
+  margin-top: 8px;
+  color: var(--blue);
+  font-family: Georgia, serif;
+  font-size: 12px;
+  letter-spacing: .12em;
+}
+.case-example h2 { margin: 0; color: var(--ink); font-family: var(--serif); font-size: 31px; font-weight: 600; line-height: 1.6; }
+.compare-block,
+.feedback-block { margin: 16px 0; padding: 28px 30px; border: 1px solid var(--blue-line); }
+.before-block { background: #fbfbfa; }
+.after-block { background: var(--green-soft); }
+.feedback-block { border-left: 3px solid var(--blue); background: var(--blue-faint); }
+.decision-block { border-left-color: #6a9d8f; background: var(--green-soft); }
+.material-meta {
+  margin: 0 0 12px !important;
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgba(76, 132, 158, .22);
+  color: var(--blue-deep);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.7;
+  letter-spacing: .035em;
+}
+.compare-block > h3,
+.feedback-block > h3 { margin: 0 0 12px; font-size: 17px; }
+.source-caption { margin: 0 0 14px !important; color: var(--muted); font-size: 13px; line-height: 1.8; }
+.compare-block div > p,
+.feedback-block div > p { margin: 0 0 14px; }
+.compare-block div > p:last-child,
+.feedback-block div > p:last-child { margin-bottom: 0; }
+.compare-block blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.compare-block blockquote > p { margin: 0 0 14px; }
+.compare-block blockquote > p:last-child { margin-bottom: 0; }
+.source-note {
+  margin: 28px 0 16px !important;
+  padding: 16px 18px;
+  border-left: 3px solid var(--blue);
+  background: var(--blue-faint);
+  color: #4f6c7c;
+  font-size: 14px;
+}
+.lesson-box { margin-top: 18px; background: var(--cream); }
+.check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.check-grid > div { padding: 24px 26px; border: 1px solid var(--blue-line); background: var(--blue-faint); }
+.check-grid h3 { margin: 0 0 10px; font-family: inherit; font-size: 17px; font-weight: 700; }
+.check-grid ul { margin: 0; padding-left: 1.25em; list-style: disc; }
+.check-grid li::marker { color: var(--blue); }
+.case-conclusion { padding: 36px 38px; border-left: 3px solid var(--blue); background: var(--cream); }
+.case-conclusion h2 { font-size: 28px; }
+
+@media (max-width: 760px) {
+  body { font-size: 16px; line-height: 1.9; }
+  .site-header-inner { width: min(100% - 28px, 1080px); min-height: 60px; }
+  .site-brand b { font-size: 13px; }
+  .site-header small { font-size: 10px; }
+  .site-nav { gap: 12px; }
+  .site-nav > a { display: none; }
+  .studio-hero-inner { width: min(100% - 32px, 900px); padding: 64px 0 58px; }
+  .studio-hero h1 { font-size: 39px; }
+  .hero-lead { font-size: 16px; }
+  .hero-principles { display: grid; grid-template-columns: 1fr; }
+  .hero-principles span { width: max-content; }
+  .home-shell { width: min(100% - 28px, 960px); padding-top: 62px; }
+  .home-shell > section + section { margin-top: 78px; }
+  .article-grid,
+  .download-grid,
+  .category-grid { grid-template-columns: 1fr; }
+  .section-heading.with-action { align-items: start; flex-direction: column; gap: 8px; }
+  .start-guide { padding: 28px 24px; }
+  .article-card { min-height: 330px; padding: 28px; }
+  .map-head { display: none; }
+  .map-row { grid-template-columns: 1fr; padding: 15px 0; }
+  .map-row > * { padding: 4px 14px; border: 0 !important; }
+  .map-row > span:first-child { color: var(--muted); font-size: 11px; font-weight: 700; }
+  .map-row > span:last-child { font-size: 11px; }
+  .site-footer { margin-top: 72px; }
+  .site-footer > div { display: block; }
+  .site-footer p { margin-top: 20px; text-align: left; }
+  .article-shell { width: min(100% - 28px, 820px); padding-top: 24px; }
+  .breadcrumb { margin-bottom: 30px; }
+  .article-header h1 { font-size: 34px; line-height: 1.5; }
+  .article-summary { font-size: 17px; }
+  .article-facts { grid-template-columns: 1fr; }
+  .article-facts > div + div { border-left: 0; border-top: 1px solid var(--blue-line); }
+  .toc { margin-bottom: 60px; padding: 18px 20px; }
+  .article-shell > section,
+  .article-shell > .case-example { margin-top: 70px; }
+  .article-shell section > h2:not(.case-example h2),
+  .case-intro h2,
+  .anti-ai-check h2,
+  .case-conclusion h2 { font-size: 27px; }
+  .two-column,
+  .rule-pair,
+  .review-levels,
+  .check-grid,
+  .question-map,
+  .review-comparison,
+  .upcoming-categories > div,
+  .resource-card dl { grid-template-columns: 1fr; }
+  .resource-card dl > div + div { border-left: 0; border-top: 1px solid var(--blue-line); }
+  .structure-diff { grid-template-columns: 1fr; }
+  .structure-diff > span { transform: rotate(90deg); min-height: 30px; }
+  .review-comparison .review-decision { grid-column: auto; }
+  .steps li { grid-template-columns: 1fr; gap: 2px; }
+  .case-intro,
+  .case-group,
+  .case-conclusion { padding: 27px 24px; }
+  .case-example > header { grid-template-columns: 1fr; gap: 4px; }
+  .case-example h2 { font-size: 27px; }
+  .compare-block,
+  .feedback-block { padding: 24px 21px; }
+  .index-shell { width: min(100% - 28px, 920px); padding-top: 24px; }
+  .index-header { padding-bottom: 42px; }
+  .resource-card { padding: 25px 22px; }
+}
+
+@media print {
+  @page { size: A4; margin: 16mm 15mm 18mm; }
+  html,
+  body { background: #fff; color: #222; font-size: 11pt; line-height: 1.75; }
+  .site-header { position: static; }
+  .site-header,
+  .site-footer { box-shadow: none; background: #fff; }
+  .site-footer { display: none; }
+  .site-header-inner,
+  .site-footer > div,
+  .article-shell { width: 100%; }
+  .breadcrumb,
+  .toc,
+  .text-link,
+  .site-nav,
+  .button-link,
+  .resource-actions { display: none; }
+  .article-header { padding-bottom: 24px; }
+  .article-header h1 { font-size: 25pt; }
+  .article-summary { font-size: 12pt; }
+  .article-facts { break-inside: avoid; }
+  .article-shell > section,
+  .article-shell > .case-example { margin-top: 38px; }
+  .case-example,
+  .compare-block,
+  .feedback-block,
+  .note-box,
+  .warning-box,
+  .lesson-box,
+  .rule-pair,
+  .review-levels,
+  .timeline li { break-inside: avoid; }
+  .question-map,
+  .artifact-stack > article,
+  .structure-diff,
+  .review-comparison article,
+  .resource-card,
+  .library-category { break-inside: avoid; }
+  a { color: inherit; }
+}
+
+.article-shell h2{margin-top:3.5rem;padding-top:1rem;border-top:1px solid var(--blue-line)}.article-shell h3{margin-top:3rem;line-height:1.65;overflow-wrap:anywhere}.article-shell figure{margin:3rem 0 1rem}.article-shell figure img{display:block;width:100%;height:auto;max-height:430px;object-fit:cover;border-radius:12px}.article-shell p{margin:1.4em 0}.article-shell [id]{scroll-margin-top:24px}.toc li{margin:.5rem 0}.toc .sub{font-size:.88em;margin-left:1rem}.article-header h1{overflow-wrap:anywhere}@media(max-width:600px){.article-shell{padding-left:20px;padding-right:20px}.site-nav small{display:none}.article-header h1{font-size:30px}}</style><body><header class="site-header"><div class="site-header-inner"><a class="site-brand" href="https://aoi-kurochan.github.io/aoi-writing-room/"><span>A</span><b>あおい執筆室</b></a><nav class="site-nav"><a href="https://aoi-kurochan.github.io/aoi-writing-room/library/">記事一覧</a><a href="https://aoi-kurochan.github.io/aoi-writing-room/resources/">配布ファイル</a><small>購入者限定</small></nav></div></header><article class="article-shell"><nav class="breadcrumb"><a href="https://aoi-kurochan.github.io/aoi-writing-room/">あおい執筆室</a><span>/</span><a href="https://aoi-kurochan.github.io/aoi-writing-room/library/">記事一覧</a></nav><header class="article-header"><p class="article-kicker">購入者向け追加アップデート</p><h1>いま実際に使っている、AIへの頼み方24選</h1></header><p>いつも教材を活用してくださり、ありがとうございます。</p>
+<p>「わかりました」って言ってるのに、全然わかってない。直してほしいと頼んだら、残したかったところまで消えている。</p>
+<p>AIを使っていて、「違う違う、そうじゃない」と思うこと、ありますよね。</p>
+<p>私は本や記事を書いたり、表紙や画像を作ったり、最近はアプリやゲームも作っています。その中でよく使う頼み方を、24個にまとめました。</p>
+<p>難しい決まり文句というより、うまくいかないときに私が何を伝えているか、という話です。どうしてこの一言を使うようになったのかも含めて、お話しします。</p>
+<p>全部を順番に使う必要はありません。今、困っていることに合うものを選んで使ってみてください。</p>
+<p>見出しの「　」の中は、そのままAIのチャットへ貼って使える依頼文です。先に、AIに頼みたい仕事や確認してほしい文章・画像を渡してください。何を渡すかは、それぞれの本文で説明します。依頼文の「私」は、AIに頼む「あなた」に置き換えて読んでください。</p>
+<p>画像やパソコンのファイルを扱う頼み方は、その機能に対応したAIで使ってください。</p><details class="toc" open><summary>この記事の目次</summary><ul><li class="group"><a href="#group-1">1．AIに仕事を頼む</a></li><li class="sub"><a href="#item-01">01「どう理解したか、まず私に説明してください」</a></li><li class="sub"><a href="#item-02">02「本文はまだ書かず、何をどんな順番で書くか、箇条書きで見せてください」</a></li><li class="sub"><a href="#item-03">03「この見出しで何を伝えたいのか、一行で説明してください」</a></li><li class="sub"><a href="#item-04">04「まず作業の順番だけ教えてください。実際の作業は、私の返事を待ってから始めてください」</a></li><li class="sub"><a href="#item-05">05「この文章をどんな観点で確認するとよくなるか、考えてください。チェックを始める前に、その観点を教えてください」</a></li><li class="group"><a href="#group-2">2．AIで文章・画像を作る・直す</a></li><li class="sub"><a href="#item-06">06「不要なたとえや気取った言い回しを避けて、普段使う自然な日本語で書き直してください」</a></li><li class="sub"><a href="#item-07">07「この文章の日本語に違和感があります。どこが不自然なのかを考えて、理由と一緒に説明してください」</a></li><li class="sub"><a href="#item-08">08「初めて読む人が一度で理解できる文章にしたいです。理解しにくいところを探して、理由と一緒に教えてください」</a></li><li class="sub"><a href="#item-09">09「文章の前後で、話がつながっていないところや矛盾しているところを、理由と一緒に教えてください」</a></li><li class="sub"><a href="#item-10">10「修正案を『絶対修正・修正検討・修正しない』の3段階に分けて、理由を添えて教えてください」</a></li><li class="sub"><a href="#item-11">11「私が話したときの感情や生々しさが消えています。元の音声の文字起こしを読み直して、消えてしまった感情や言い回しを文章に戻してください」</a></li><li class="sub"><a href="#item-12">12「図や画像を入れるとわかりやすくなる場所と、どんな図や画像がよいかを、理由と一緒に提案してください」</a></li><li class="sub"><a href="#item-13">13「見本の画像と、今作っている画像が、具体的にどこで違っているか説明してください」</a></li><li class="sub"><a href="#item-14">14「何か違和感があります。まだ書き直さず、文章の問題点と直し方を考えて説明してください」</a></li><li class="sub"><a href="#item-15">15「同じ言葉や指摘、強調を繰り返しているところを整理してください。必要な説明は残してください」</a></li><li class="sub"><a href="#item-16">16「まだ本文は直さず、原文・修正案・直す理由を、表にして見せてください」</a></li><li class="group"><a href="#group-3">3．作業を進める・ルールを残す</a></li><li class="sub"><a href="#item-17">17「一つの作業が終わるたびに、結果を見せて私の返事を待ってください」</a></li><li class="sub"><a href="#item-18">18「まず小さな見本を一つだけ作ってください。残りは、私が確認してから進めてください」</a></li><li class="sub"><a href="#item-19">19「確認→修正→修正後の再確認を1セットとして、このセットは合計2回までにしてください。そこでいったん止めて、できているものと、まだ解決していない問題を見せてください」</a></li><li class="sub"><a href="#item-20">20「いったん作業を止めてください。うまく進まなかった原因と、同じことを繰り返さないために変えることを説明してください」</a></li><li class="sub"><a href="#item-21">21「今回のやり取りで何度も伝えた希望を、次回も使えるルールにまとめて提案してください」</a></li><li class="sub"><a href="#item-22">22「指定した範囲にあるルールを読み、重複や矛盾があれば教えてください。まだ書き換えないでください」</a></li><li class="sub"><a href="#item-23">23「指定したフォルダの中を確認し、『削除できそう・削除を検討・残す』の3段階に分けて、理由と一緒に提案してください。まだ削除しないでください」</a></li><li class="sub"><a href="#item-24">24「次のチャットで続きを頼めるように、決まったことと残りの作業をまとめてください」</a></li><li class="group"><a href="#group-4">最後に。まずは一つ、使ってみてください</a></li></ul></details><h2 id="group-1">1．AIに仕事を頼む</h2><figure><img src="./planning.jpg" alt="紙と付箋を使って計画を整理する手元" width="774" height="581" loading="lazy"></figure>
+<p>まずは、AIにどう仕事を進めてもらうかを確認する5個です。頼んだ内容の理解や作業の順番を確かめるほか、文章を書いている途中や、書き終えたあとに確認する頼み方もあります。</p>
+<h3 id="item-01">01「どう理解したか、まず私に説明してください」</h3>
+<p>「わかりました」って言ってるのに、AIがわかってないときって、めっちゃあるんですよね。</p>
+<p>「いやいや、お前わかってへんやんけ」</p>
+<p>そんなツッコミをしたこと、皆さんもないでしょうか。私は100回くらいあります。</p>
+<p>なので、仕事をお願いするときに、「どう理解したか、まず私に説明してください」と一緒に伝えます。</p>
+<p>例えば、AIの使い方を説明する本を作るとします。「初めてAIを使う人向けに、質問を入力して返事を読むところから、難しい言葉を使わずに説明したい」と書いて、そのあとに「どう理解したか、まず私に説明してください」と添えて、AIに送ります。</p>
+<p>そこで「すでにAIを使っている人に、もっと上手な頼み方を教える本ですね」と返ってきたら、「いや、まだ一度も使ったことがない人向けです。最初の質問を入力するところから説明してください」と伝え直します。</p>
+<p>こうして、AIが誰に何を説明するつもりなのかを確かめてから、本文を書いてもらうわけです。</p>
+<p>これで100％防げるわけではないんですけど、この一回を挟むだけで、「お前わかってへんやんけ」とツッコむ機会は、私の体感では結構減っています。</p>
+<h3 id="item-02">02「本文はまだ書かず、何をどんな順番で書くか、箇条書きで見せてください」</h3>
+<p>これは最近、かなり使っています。</p>
+<p>私は基本的にAIを使って文章を書くんですけど、「書いてください」と任せると、同じような主張を何回も繰り返すことがあるんですよね。なぜか何度も同じことを言う。これはもう本当に不思議で仕方がないが、直らない。</p>
+<p>なので、いきなり本文を書いてもらわず、まずは文章の流れを箇条書きで見せてもらいます。テーマと入れたい内容を伝えて、この一言を添えます。</p>
+<p>AIが出してきた箇条書きを読んで、同じ内容が何度も出てきたら、本文を書いてもらう前に「これ、さっきも同じようなこと言ってるよね」とツッコめるんです。</p>
+<p>AIの仕組みは私もいまいちよくわからないんですけど、一度完成した文章をあとから修正するのって、えらい手間がかかることがあって。</p>
+<p>本なら、まずAIに章の並びを提案してもらって、私が確認する。次に、その中の節を提案してもらって、また確認する。節というのは「1-1」「1-2」のような、一つの章の中の区切りです。そのあとで、それぞれの節に何を書くかをAIに箇条書きで見せてもらいます。</p>
+<p>こうやって少しずつ細かくして、流れを確認してから本文をお願いする。私の場合は、この進め方だとうまく書けることが多いです。</p>
+<h3 id="item-03">03「この見出しで何を伝えたいのか、一行で説明してください」</h3>
+<p>さっきのように、ちゃんと箇条書きから作っても、うまくいかないことがあります。</p>
+<p>何回書き直しても、なんか違う。そういうときに使うのが、この一言です。</p>
+<p>うまくいっていない節や見出しと、その本文をAIに見せて、「そもそも、ここで何を伝えたいんでしたっけ」と確認し直します。</p>
+<p>これは執筆を始める前の確認というより、書いている途中で、一度立ち止まるための言葉ですね。</p>
+<p>「この見出しで何を伝えたいのか、一行で説明してください」</p>
+<p>一行にしてもらうと、AIが何を伝えようとしていたのかを確認できます。そこで自分の意図と違っていたら、「ここで伝えたいのは、こっちです」と戻す。</p>
+<p>何を伝える節なのかがはっきりすると、そのあとの文章も直しやすくなります。何回書いても、うまくいかないな、というときに便利です。</p>
+<h3 id="item-04">04「まず作業の順番だけ教えてください。実際の作業は、私の返事を待ってから始めてください」</h3>
+<p>これは、かなり大事です。最近、本当によく使っています。</p>
+<p>私が使っているAIのClaudeやCodex、賢いんですよね。とっても賢い。お二方とも、とても賢いでございます。</p>
+<p>お願いすると、果てしなく最後まで作業を進めてくれることがあります。それはいいんですけど、果てしなく進めた挙げ句、作業の方向を間違っていることもあるんです。</p>
+<p>そのときに漂う絶望感って、半端なくて。</p>
+<p>良かれと思って、どんどん進めてくれているんでしょうけど。いや、まず今から何をやろうとしているか、説明してもらっていいかな、と。</p>
+<p>なので、頼みたい仕事を伝えるときに、この一言も一緒に送ります。作業を始める前に、順番だけ教えてもらうわけです。</p>
+<p>例えば、記事を書いてもらうなら、「先に見出しを決めて、そのあとで本文を書きます」といった順番を出してもらう。もし資料の確認から始めてほしいなら、「まず、渡した資料を読んでください」と伝え直します。</p>
+<p>出てきた順番でよければ、「その順番で進めてください」とお願いするわけです。</p>
+<p>私の感覚なんですけど、ポンと依頼するよりも、一度説明してもらってから進めた方が、ズレが減る気がしています。</p>
+<p>こちらがツッコめるのも大きいんですが、ツッコまなかったとしても、一度これからやることを考えてもらう。そのステップ自体を挟むと、AIが賢くなる・ミスが減る気がしていて、このステップそのものが大事な気がするんですよね。（あおい調べです）</p>
+<p>私はこの頼み方をかなり使っていて、作業も進めやすくなっていると感じています。</p>
+<h3 id="item-05">05「この文章をどんな観点で確認するとよくなるか、考えてください。チェックを始める前に、その観点を教えてください」</h3>
+<p>AIで文章を書いたあと、最後にもう一度、AIに見直してもらうこともありますよね。</p>
+<p>「正しい文章か見直してください」でもいいんですけど、それだけだともったいないな、と私は思っています。</p>
+<p>まず、「何を確認するつもりなのか」を教えてもらうんです。誤字なのか、初心者への説明なのか、前後のつながりなのか。そういう、文章を見るときの観点ですね。</p>
+<p>昔は、私から事細かに確認の観点を伝えていたんですよ。「ここを見て、これも見て」と。</p>
+<p>なんですけど、最近はその観点もAIに考えてもらっています。</p>
+<p>文章と、誰に読んでもらいたいかを渡して、「この文章をどういう観点で確認すると、読者にとってよくなりそうか、まずあなたが考えてください」と頼む。そのうえで、チェックする前に見せてもらいます。</p>
+<p>自分が気にしていたことが抜けていたら足してもらうし、納得できればその観点で確認をお願いする。</p>
+<p>私の感触では、いきなり「見直してください」と頼むよりも、確認してほしいことに合ったチェックをしてもらいやすいです。</p>
+<h2 id="group-2">2．AIで文章・画像を作る・直す</h2><figure><img src="./creative.jpg" alt="絵の具で制作を進める手元" width="874" height="580" loading="lazy"></figure>
+<p>ここからは、文章や画像を見て「なんか違う」と思ったときや、もう少しよくしたいときに使う11個です。</p>
+<h3 id="item-06">06「不要なたとえや気取った言い回しを避けて、普段使う自然な日本語で書き直してください」</h3>
+<p>AIで作った文章って、よくわからない謎の比喩とか、謎の言い回しが出てくることがあるんですよね。</p>
+<p>お前なんでそんな変な例え話とか、比喩入れてくんねん、と。普通でええねん、普通で、と。</p>
+<p>AIで文章を書いている方なら、わかるでしょうか。なんか知らんけど、回りくどい。</p>
+<p>間違っているわけではない。でも、とにかく回りくどいことだけはわかる。自分だったら、そんな言い方はしない。</p>
+<p>そういうときは、気になる文章をAIに見せて、この一言を使います。</p>
+<p>「自然にしてください」だけだと、どんなふうに直してほしいか伝わりにくいので、不要なたとえや気取った言い回しを避けて、普段使う日本語で、と伝えるわけです。例えば、「学びの旅に一歩を踏み出しましょう」を「勉強を始めましょう」にする、といった感じです。（学びの旅に一歩を踏み出すって何やねん、と）</p>
+<p>これで結構、直ることがあります。書き直された文章を読んで、元の意味が変わっていないか、自分の言葉として違和感がないかを見てみてください。</p>
+<h3 id="item-07">07「この文章の日本語に違和感があります。どこが不自然なのかを考えて、理由と一緒に説明してください」</h3>
+<p>文章を読んで「なんか不自然だな」と思っても、どこが気になるのか、自分でうまく説明できない。そういうときに、まずAIに気になるところを探してもらう頼み方です。</p>
+<p>気になる文章を渡して、「ここが不自然です」「ここも不自然です」と一つずつ指摘していくのもいいんですけど、AI自身に探してもらうこともできます。</p>
+<p>「なんか不自然な気がするよ。あなたも自分で考えられると思うから、考えてみて」</p>
+<p>そんな感じです。</p>
+<p>私が使っているAIだと、こちらが全部言わなくても、「この言い回しが不自然です」と、自分で気になるところを見つけてくれることがあります。</p>
+<p>このときは、場所だけでなく理由も説明してもらうんです。何を不自然と判断したのかがわかれば、「そう、そこが気になっていた」と確認できますし、「そこは自分の言い方なので残したい」とも言えます。</p>
+<p>まず説明を読んで、納得できたところから修正をお願いすれば大丈夫です。</p>
+<h3 id="item-08">08「初めて読む人が一度で理解できる文章にしたいです。理解しにくいところを探して、理由と一緒に教えてください」</h3>
+<p>私は初心者の方に向けた本を書くことが多いので、この頼み方もよく使います。</p>
+<p>自分ではわかっているつもりでも、初めて読む人には伝わらないところがあるんですよね。</p>
+<p>文章と、どんな人に読んでもらいたいかをAIに伝えてから、「初めて読む人が一度で理解できるようにしたいです。そうなっていないところを探してください」と頼みます。</p>
+<p>例えば、説明していない略語をいきなり使っていたり、操作の途中を省いていたり。書いている側には当たり前でも、読む側にはわからないかもしれません。（ワタクシも、最近ほんとにこれ気をつけないとダメだなぁと思ってます。自戒を込めて。）</p>
+<p>ここでも、「この箇所です」だけで終わらず、なぜ初めて読む人には理解しにくいと考えたのか、理由まで聞きます。</p>
+<p>理由を見れば、用語の説明を足せばいいのか、手順を一つ戻って説明した方がいいのかを考えられます。気になった箇所だけでなく、理由を一緒にもらう。私はこの形でよくお願いしています。</p>
+<h3 id="item-09">09「文章の前後で、話がつながっていないところや矛盾しているところを、理由と一緒に教えてください」</h3>
+<p>AIが作った文章って、ぶつ切りになることがあるんですよね。</p>
+<p>言っていることは正しい。でも、急に違う話になる。</p>
+<p>一文ずつ読んでいるとそこまで変ではないのに、続けて読むと「あれ？」となる。そういうときに使います。</p>
+<p>前後のつながりを見てほしいので、気になった一文だけでなく、確認してほしい文章の全体をAIに渡してください。</p>
+<p>そのうえで、話がつながらないところや、矛盾しているところと、その理由を教えてもらいます。</p>
+
+<p>場所だけ教えてもらうよりも、「なぜそこだと考えたのか」まで聞くと、とってもいい。かなり使えると思っています。</p>
+<h3 id="item-10">10「修正案を『絶対修正・修正検討・修正しない』の3段階に分けて、理由を添えて教えてください」</h3>
+<p>文章の精度をもう少し上げたいときに使います。</p>
+<p>AIって、「修正点を挙げてください」と言うと、いつまでも修正点を挙げてくることがあるんですよね。そして、いつまでも修正が終わらない。まさにエンドレス。</p>
+<p>なので、文章を見直してもらうときに、元の文章を渡して、この一言を添えます。修正案を出してもらうときに、その修正がどれくらい必要なのかも、3段階に分けて教えてもらうんです。</p>
+<p>「絶対修正」は、誤字や、明らかに文脈がおかしいところ。「修正検討」は、直した方がよくなるか考えたいところ。「修正しない」は、変える必要がないと考えるところです。それぞれ、理由も添えてもらいます。</p>
+<p>私は「絶対修正」と「修正検討」を、基本的には反映することが多いですかね。</p>
+<p>一方で、「もう、もはやこれ好みの問題やろ」とか、「いや、そこは個性やね」というものもあります。そういうところは、修正しない。</p>
+<p>全部を同じ重さで受け取らず、どれを直すか分けて考えるために使っています。もちろん、AIの分類を見て、最後に採用するか決めるのは自分です。</p>
+<h3 id="item-11">11「私が話したときの感情や生々しさが消えています。元の音声の文字起こしを読み直して、消えてしまった感情や言い回しを文章に戻してください」</h3>
+<p>私は、音声でしゃべったものをAIに整えてもらって、文章を書くことがほとんどです。実は、この24個の説明も、音声でしゃべったものをもとにしています。</p>
+<p>なんですけど、めっちゃ生々しくしゃべったのに、文章になると、めちゃめちゃ整いすぎていることがあるんですよね。</p>
+<p>感情も、途中のツッコミも、なんか消えている。きれいな文章にはなったけど、私がしゃべっていた感じと違う。</p>
+<p>そういうときは、整えてもらった文章と、元の音声を文字にしたものを両方渡して、この一言を使います。</p>
+<p>「いや、もう一回、元のデータまで戻ってやり直してこい」</p>
+<p>ということですね。</p>
+<p>これは、上手な言い方というより、私がよくやっている作業です。整えた文章だけを直してもらうのではなく、元の音声で何を言っていたのか、どんな言い方をしていたのかに戻る。</p>
+<p>そこから、消えてしまった感情や生々しさを戻してもらいます。新しく感情を足すのではなく、私が実際にしゃべっていたものを、もう一度拾ってもらうんです。</p>
+<h3 id="item-12">12「図や画像を入れるとわかりやすくなる場所と、どんな図や画像がよいかを、理由と一緒に提案してください」</h3>
+<p>本や記事に挿絵を入れるとき、「そもそも、どこに入れるといいのか」も、AIに考えてもらっています。</p>
+<p>私は基本的に節の最後へ挿絵を入れるようにしているんですけど、別に、節の最後でなければダメというわけではありません。</p>
+<p>本文を渡して、「ここに図や画像があると、もっとわかりやすくなりそう」という場所を探してもらう。これも、結構いい提案をしてくれます。</p>
+<p>そのときは、場所だけでなく、どんな図や画像を入れるのかと、その理由も一緒にお願いするといいです。</p>
+<p>文章だけだと想像しにくい完成形を見せるのか、手順を図にするのか。何を見せたい画像なのかまで提案してもらいます。</p>
+<p>そこまで決まっていれば、あとで実際に挿絵を作るときにも、その説明を使えます。提案を読んで、採用したい場所と内容を選んでから、画像の制作へ進めばいいわけです。</p>
+<h3 id="item-13">13「見本の画像と、今作っている画像が、具体的にどこで違っているか説明してください」</h3>
+<p>挿絵や表紙を作るとき、参考にしたい画像があることってありますよね。私の場合は、表紙でよくあります。</p>
+<p>シリーズものだったら、表紙の雰囲気をそろえたいじゃないですか。</p>
+<p>なんだけど、急に謎のオリジナリティを発揮して、全然違うトーンの表紙をお作りになることが、AIさんには時々ございます。</p>
+<p>「いやいや、なんでやねん。シリーズものやって言ってるのに」</p>
+<p>そこで「前の表紙と同じような表紙を作って」とお願いするんですけど、これがドツボの入口でございまして。</p>
+<p>「はい、かしこまりました。私が間違っておりました」みたいな返事をしながら、また全然トーンが違う表紙を作ってくる。これが続くと、猛烈にストレスがたまります。私は普通にガチギレします。</p>
+<p>なので、すぐ次の画像を作ってもらう前に、見本と今の画像を両方渡して、どちらが見本なのかも伝えます。</p>
+<p>そして、「この二つは、具体的にどこが違っているのか」を説明してもらうんです。</p>
+<p>色なのか、文字の大きさなのか、配置なのか。まず違いをAIに言葉にしてもらう。それを読んで、自分が気にしていた違いと合っていれば、そこを直してもらいます。</p>
+<p>文章だけでなく、画像を作るときも、先に課題を言葉にしてもらうと、直してほしいところが伝わりやすくなります。</p>
+<h3 id="item-14">14「何か違和感があります。まだ書き直さず、文章の問題点と直し方を考えて説明してください」</h3>
+<p>ここまで、似たような頼み方をいくつかご紹介してきましたが、これはもう少し広く、AIに考えてもらう言い方です。</p>
+<p>「なんか違うんだけど、何が違うかよくわからん」</p>
+<p>そういうときに、原稿を見せて、問題を探すところからお願いすることがあります。結構、無茶ぶりです。</p>
+<p>メンバーが頑張って資料を作って持ってきた。頑張ったのはわかる。でも、なんか違う。「ちょっともう一回、自分で考えてみて」だけで返す、みたいな感じ。</p>
+<p>ちなみに実際の職場でチームメンバーにこれやったら、光の速さでメンバーの心は離れていくので、ご注意ください。（でも昔は上司によくやられたけどなぁ〜。時代は変わりましたね。）</p>
+<p>私はAIとのやり取りでは、この頼み方も結構使っています。以前は難しいと感じていたのに、最近は、こういう広い聞き方でも、自分で課題を考えて提案してくれることがあるんです。</p>
+<p>ただ、何が違うのかがまだ決まっていないので、いきなり書き直してもらわず、問題点と直し方の説明を先にもらいます。</p>
+<p>不自然な日本語なのか、説明が足りないのか、そもそも伝えたいことが違うのか。自分でも言葉にできていないときは、出てきた説明を見ながら考えてみるといいと思います。</p>
+<h3 id="item-15">15「同じ言葉や指摘、強調を繰り返しているところを整理してください。必要な説明は残してください」</h3>
+<p>AIの文章を読んでいると、なぜか同じ言葉を連呼し始めることがあります。</p>
+<p>同じような指摘とか、同じような強調とか。突然「正直に言うと」を何度も言い始めたりするんですよね。（もう正直なんわかったから、と。）</p>
+<p>一回ならいいんですけど、繰り返されると気になります。</p>
+<p>そういうときは、前後を含めた文章を見せて、同じ言葉や指摘が続いているところを整理してもらいます。</p>
+<p>注意書きの繰り返しにも使えますが、それだけではありません。言葉を強調しすぎていたり、同じことを言い方だけ変えて何度も説明していたりするときにも使います。</p>
+<p>必要な説明まで消したいわけではないので、そこは残してもらう。書き直されたものを読んで、言いたいことが一度できちんと伝わるかを確かめます。</p>
+<h3 id="item-16">16「まだ本文は直さず、原文・修正案・直す理由を、表にして見せてください」</h3>
+<p>文章がある程度できて、完成に近づいてきたら、私はこの頼み方をよく使います。</p>
+<p>いきなり「修正してください」と頼むと、変な直し方をしたり、直しすぎたりすることがあるんですよね。</p>
+<p>5,000字の文章を修正してもらったら、2,000字になっていた。私は、こういうこともよくあります。いや、削りすぎやろ、と。</p>
+<p>なので、直してほしい文章と気になっていることを伝えたら、まず原文と修正案を表にして見せてもらう。理由も一緒にもらいます。</p>
+<p>元の文章と修正案が横に並んでいれば、どこをどう変えるつもりなのかがわかります。理由を読めば、なぜそこを直そうとしているかもわかる。</p>
+<p>「そこは残したい」「この修正はいい」と確認してから、納得したものだけ反映してもらいます。</p>
+<p>一番ドツボにはまるのが、「修正してください」で出てきた文章に「これが違います」と言うと、また微妙に違う文章が出てくるパターンです。</p>
+<p>それでまた修正をお願いして、また微妙に違う。</p>
+<p>もう、AIで文章を書いていて、ウキーってなるので。</p>
+<p>そうなる前に、一度、表で見せてもらう。私の場合は、結構生産性上がってるなと思います。</p>
+<h2 id="group-3">3．作業を進める・ルールを残す</h2><figure><img src="./workflow.jpg" alt="ガラスのボードに作業を整理する手元" width="774" height="581" loading="lazy"></figure>
+<p>最後は、任せる作業を少しずつ増やしたり、次の仕事へ引き継いだりするときに使う8個です。</p>
+<h3 id="item-17">17「一つの作業が終わるたびに、結果を見せて私の返事を待ってください」</h3>
+<p>最近、私が使っているAIは、自分で考えて、最後まで一気に作業を進めてくれることがあります。</p>
+<p>でも、最初から全部任せるより、一つずつ確認した方がいいな、と思うことも多いんです。</p>
+<p>やり直しを減らして、AIを使う量も抑えたい。そんなときは、まず「一つの作業」がどこまでなのかを決めます。本なら一節ずつ、というように区切ってから、この言葉を伝えます。</p>
+<p>一つ終わったら結果を見て、「ここが違うので、次はこれに気をつけてください」と返す。また一つお願いして、また気になったところを伝える。</p>
+<p>そうやって、「ほぼ自分の思っているとおりにできるようになってきたな」と思ったら、「では、残りの作業を一気に進めてください」と任せる範囲を広げます。</p>
+<p>なんか、本当に人間と同じですよね。新人や、自分の下についているメンバーと同じで、最初から全部任せるのではなく、少しずつ仕事をお願いして、少しずつフィードバックする。</p>
+<p>合ってきたら、一気にドカンと任せる。</p>
+<p>この進め方が、私はとてもいいと思っています。</p>
+<h3 id="item-18">18「まず小さな見本を一つだけ作ってください。残りは、私が確認してから進めてください」</h3>
+<p>これは、一つ前と似ていますが、最初に小さな試作品を作ってもらう頼み方です。</p>
+<p>文章でも、表紙でも、画像でも使います。最近、私はゲームも結構作っているんですけど、ゲームでも同じです。アプリやWebアプリを作るときにも使っています。</p>
+<p>作りたいものと条件を伝えたら、最初から全部を作ってもらうのではなく、ものすごく小さい単位で、まず一つだけ作ってもらいます。</p>
+<p>例えば、挿絵なら一枚。ゲームなら「ボタンを押すとキャラクターがジャンプするところだけ作ってください」と頼む、といった具合です。まず試したい動きを一つに絞って、どこまで作ってほしいかも先に伝えます。</p>
+<p>できた見本を見て、違うところを伝える。それが合ってきたら、少しずつ作る範囲を大きくしていく。最後に、一気にドーンとお願いする。</p>
+<p>一つ前は、進行中の仕事をどこで区切って確認するか、という話。こちらは、作りたいものの見本を最初に一つ作る、という話です。</p>
+<p>微妙に似ていますけど、使う場面が違うので、あえて両方載せています。</p>
+<h3 id="item-19">19「確認→修正→修正後の再確認を1セットとして、このセットは合計2回までにしてください。そこでいったん止めて、できているものと、まだ解決していない問題を見せてください」</h3>
+<p>これも大事です。</p>
+<p>複数のAIに確認してもらったり、サブエージェントを使ったりすることがあります。サブエージェントというのは、主担当とは別に仕事を分担してもらうAIのことです。</p>
+<p>確認をお願いできるのは便利なんですけど、いつまでも検証していることがあるんですよ。</p>
+<p>「あれ、いつまでたっても、この作業終わらんな。そんな難しいことお願いしたつもりないんやけどな」</p>
+<p>そう思って様子を見に行くと、複数のAI同士で延々と議論している。</p>
+<p>何も決まらない、眠い、夜遅い時間の会議みたいなことをやっているわけです。はい、私もよくやっていましたね、そういう会議。</p>
+<p>AIには「トークン」という、文章などの処理量を数える単位があります。私としては、そこに使う量ばかり増えて、大したものが出てこないのはつらい。絶望的。</p>
+<p>なので、確認や修正を続けてお願いする前に、何回まで試してもらうかを決めておきます。見出しは2回の例なので、回数は依頼に合わせて変えてください。</p>
+<p>決めた回数になったら、その時点でできているものを出してもらう。そして、解決できなかったことは、未解決の課題として教えてもらいます。</p>
+<p>その一覧を見て、追加で直すか、今の内容でよいかを自分で決める。</p>
+<p>AIに自分で考えて自走して進めてもらう頼み方は便利なんですけど、回数を区切っておかないと、夜10時以降の生産性の低い会議みたいになることがあるので。私は、先に終わるタイミングも決めるようにしています。</p>
+<h3 id="item-20">20「いったん作業を止めてください。うまく進まなかった原因と、同じことを繰り返さないために変えることを説明してください」</h3>
+<p>AIは何かを依頼したとき「失敗しました」「うまくいきませんでした」と言いながら、延々と作業していることがあります。</p>
+<p>そういうときは、「お前、ちょっと何やってんねん」と止めるんです。</p>
+<p>止めたうえで、まず、なぜうまくいかなかったのかを説明してもらいます。別のチャットで相談するなら、頼んだ内容、AIの返答、どこが期待と違ったかも一緒に渡してください。</p>
+<p>これ、とても大事だと思っています。</p>
+<p>トラブルが起きたときに、まず原因を把握して、再発防止策を考える。会社で働いていると、よくある話じゃないですか。それとかなり似ている気がします。</p>
+<p>同じ依頼を何度も繰り返す前に、何がうまくいっていないのかを確認する。依頼の説明が足りなかったのか、一度に任せたことが多すぎたのか。それとも、別の理由なのか。</p>
+<p>AIが出した説明は、実際のやり取りと照らして読んでください。原因の推測まで、確認済みの事実として受け取る必要はありません。</p>
+<p>次に何を変えるかまで決めてから、作業を再開します。</p>
+<h3 id="item-21">21「今回のやり取りで何度も伝えた希望を、次回も使えるルールにまとめて提案してください」</h3>
+<p>本を一冊書いた。動画を一つ作った。アプリやゲームを一つ作った。</p>
+<p>そういう一仕事が終わって、そのチャットを閉じる前に、私はこれを使います。</p>
+<p>何回もお願いしたことって、次からはルールにできるんですよね。</p>
+<p>「難しい言葉は説明して」「感想を消さないで」と何度も伝えたなら、次の仕事でも先に渡せる形にしておく。そのために、今回のやり取りの中でルールにできることを、まずAIに提案してもらいます。</p>
+<p>内容を見て、自分の希望に合っているかを確認する。次の仕事でも使いたいものを保存して、次に頼むときの最初にAIへ渡します。</p>
+<p>これを丁寧にやればやるほど、AIが自分好みに仕上がっていく感じがあります。</p>
+<p>AIが勝手に全部覚えてくれるという意味ではなく、自分が何を大事にしているかを、次の仕事でも伝えられるようにしておくということですね。</p>
+<p>毎回同じことを言っているな、と思うなら、一仕事が終わったときに使ってみるといいんじゃないかなと思います。</p>
+<p>AIそのものにもこの機能はありますが、どうにも、正しく発動しないことが多いなと思っていて。</p><p>なので私はローカルにmdファイルを作ってそこにルールを蓄積しています。</p><h3 id="item-22">22「指定した範囲にあるルールを読み、重複や矛盾があれば教えてください。まだ書き換えないでください」</h3>
+<p>これは、一つ前と逆の話に聞こえるかもしれません。</p>
+<p>ルールを足すと、自分の希望を伝えやすくなります。でも、足しすぎると、今度はルール同士がぶつかることがあるんですよね。</p>
+<p>しかも、自分では、どこに何のルールを作ったか、もはや把握しきれていない。いつの間にか矛盾していることがあります。</p>
+<p>なので、私は時々、今使っているルールの状態を確認してもらうんです。</p>
+<p>私が使っているAIは、一定の期間ごとに使える量が決まっています。週末に、「もうすぐその上限がリセットされるけど、まだ使える分が残っているな」というときにお願いすることもあります。</p>
+<p>チャットで頼むなら、確認したいルールをまとめて渡してください。パソコン上のファイルを読めるAIに頼むなら、確認してよいフォルダと、触ってはいけない範囲を先に指定します。</p>
+<p>そのうえで、まず現状を読んで、重複や矛盾を教えてもらう。まだ書き換えてもらう段階ではありません。</p>
+<p>例えば、同じ場面について「全部箇条書きにする」と「箇条書きは使わない」が両方あれば、そのままでは困ります。（矛盾したルールは、AIの処理速度が遅くなる、精度が落ちる原因になる可能性があります。）どちらを優先するのか、場面によって使い分けるのかを、提案を見て決めます。</p>
+<p>感覚としては、パソコンの掃除に近いですかね。増やしっぱなしにせず、時々整理する。私はこれも結構やっています。</p>
+<h3 id="item-23">23「指定したフォルダの中を確認し、『削除できそう・削除を検討・残す』の3段階に分けて、理由と一緒に提案してください。まだ削除しないでください」</h3>
+<p>動画を作ったり、本を書いたり、画像を作ったりしていると、とにかくデータがたまっていきます。</p>
+<p>私のパソコン、まだそんなにすごいものを使えていないので、すぐパンパンになるんですよ。保存できる容量が埋まってしまう。</p>
+<p>パソコンがフリーズしたり、いきなりブチンとAIのアプリが落ちたりすることもあって、もう買い替えようかな、とも考えています。</p>
+<p>ただ、データを保存する容量と、アプリが作業に使うメモリは別です。ファイルを消せばフリーズが直る、という話ではありません。ここで頼むのは、保存しているデータの整理です。</p>
+<p>私は定期的に、指定したフォルダの中で、もう使わないデータの候補を出してもらっています。整理する量が1GBくらいになることもあります。</p>
+<p>これは、パソコンのファイルを確認できるAIに頼む使い方です。対象のフォルダと、残したい完成版や原本を先に伝えてから、この依頼文を使います。確認できないファイルは、削除候補と決めつけず、「わからない」と報告してもらってください。</p>
+<p>ここでも、3段階に分けてもらいます。</p>
+<p>「削除できそう」は、もう使わないと考える理由がはっきりしているもの。「削除を検討」は、まだ使うかもしれず、自分に確認してほしいもの。「残す」は、完成版や原本など、取っておくものです。それぞれ、ファイル名と理由を出してもらう。AIに「絶対安全」と保証してもらうのではなく、自分が確認するための候補です。</p>
+<p>実際に消すかどうかは、その一覧を見て決めます。消すと決めたものも、いきなり完全に削除するより、まずは戻せるゴミ箱へ移すように頼むと確認しやすいです。</p>
+<p>お使いのパソコンにもよると思いますが、私の場合はデータが結構たまるので、定期的に整理しています。</p>
+<h3 id="item-24">24「次のチャットで続きを頼めるように、決まったことと残りの作業をまとめてください」</h3>
+<p>最後は、チャットの引っ越しです。</p>
+<p>私は、AIに使う量をできるだけ抑えたいと思っていて、ある程度やり取りがたまったら、新しいチャットへ移るようにしています。</p>
+<p>やり取りが増えると、以前の相談や途中の案まで、同じチャットにたまっていきます。なので私は、続きに必要なことをまとめて、新しいチャットへ移るようにしています。</p>
+<p>引っ越すとき、今のチャットを閉じる前に頼むのが、この一言です。</p>
+<p>すでに決まったことと、次にやることをまとめてもらう。それを自分で確認してから、新しいチャットの最初に渡します。</p>
+<p>続きに必要な原稿や画像、ルールも、まとめとは別に渡してください。新しいチャットで読める状態にしておかないと、続きの仕事をお願いできません。</p>
+<p>何をどこまで引き継ぎたいかは、その仕事によっても違います。全部持っていきたいのか、今決まっていることと残りの仕事だけでいいのか。そこは、自分が何を残したいかを考えて、まとめを確認するといいと思います。</p>
+<p>これは、この言葉そのものが大事というより、必要なことを整理して、次のチャットへ引き継ぐ作業が大事、というふうに受け取ってもらえたらと思います。</p><h2 id="group-4">最後に。まずは一つ、使ってみてください</h2><p>ここまで読んでくださって、ありがとうございます。</p><p>24個ご紹介しましたが、全部を覚えなくても大丈夫です。次にAIを使うとき、「これ、今の自分に使えそうだな」と思った一言から試してみてください。</p><p>私も、AIにツッコミを入れながら使っています。一回でうまく伝わらなかったら、もう少し説明する。違うものが返ってきたら、どこが違うか一緒に考える。そうやって、自分に合う頼み方を少しずつ見つけていけたらいいと思っています。</p><p>「なんで伝わらへんねん」と困る時間が少し減って、「あ、これが作りたかったんだ」と思えることが増えたら、うれしいです。</p><p>本でも、記事でも、画像でも。あなたが作ってみたいものを、AIとやり取りしながら形にする。そのときに、この24個の依頼文が役に立てば幸いです。</p><p>まずは、今作りたいものから。ご自身のペースで、楽しみながら取り組んでもらえたらうれしいです。</p></article><footer class="site-footer"><div><b>あおい執筆室</b><p>本サイトは教材購入者向けの特典ページです。本サイトのURLを第三者へ共有すること、および内容を転載することはお控えください。</p></div></footer></body></html>
