@@ -672,7 +672,7 @@ code {
 .category-description { margin: 10px 0 22px; color: var(--muted); font-size: 14px; }
 .library-row {
   display: grid;
-  grid-template-columns: 34px 1fr 28px;
+  grid-template-columns: 34px minmax(0, 1fr) 28px;
   gap: 15px;
   align-items: center;
   padding: 24px;
@@ -1014,7 +1014,7 @@ code {
   .article-grid,
   .download-grid,
   .category-grid,
-  .latest-update { grid-template-columns: 1fr; }
+  .latest-update { grid-template-columns: minmax(0, 1fr); }
   .section-heading.with-action { align-items: start; flex-direction: column; gap: 8px; }
   .start-guide { padding: 28px 24px; }
   .latest-update { padding: 30px 25px; gap: 24px; }

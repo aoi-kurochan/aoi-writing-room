@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MarkdownDownload } from "./_components/MarkdownDownload";
 import { SiteFooter, SiteHeader } from "./_components/SiteChrome";
-import { articles, categories, downloads, productTitle } from "./_data/content";
+import { articles, categories, downloads, kindleCategoryUpdate, productTitle } from "./_data/content";
 import downloadContent from "./_data/download-content.json";
 
 export default function Home() {
@@ -37,8 +37,27 @@ export default function Home() {
       </section>
 
       <div className="home-shell">
+        <section className="latest-update" aria-labelledby="kindle-category-update">
+          <div className="latest-update-copy">
+            <p>最新アップデート</p>
+            <h2 id="kindle-category-update">{kindleCategoryUpdate.title}</h2>
+            <p>{kindleCategoryUpdate.summary}</p>
+            <p>本教材をご購入済みの方は、追加料金なしでご覧いただけます。</p>
+            <div className="latest-update-actions">
+              <Link href={kindleCategoryUpdate.href} target="_blank" rel="noreferrer">
+                無料で教材と使い方を見る →
+              </Link>
+            </div>
+          </div>
+          <div className="latest-update-points" aria-label="この教材でできること">
+            <span>本に合うカテゴリを探す</span>
+            <span>カテゴリ1位の本のKindleストア全体の順位を比べる</span>
+            <span>KDPで選ぶ項目の候補を調べる</span>
+          </div>
+        </section>
+
         <section className="latest-update" aria-labelledby="ai-prompts-update">
-          <div className="section-heading"><div><p>最新アップデート</p><h2 id="ai-prompts-update">いま実際に使っている、AIへの頼み方24選</h2><p>AIに仕事を頼むとき、文章や画像を直すとき、作業を進めるとき。いま困っていることに合う一言から使ってみてください。</p><a href="/aoi-writing-room/library/ai-prompts/">記事を読む →</a></div></div>
+          <div className="section-heading"><div><p>これまでのアップデート</p><h2 id="ai-prompts-update">いま実際に使っている、AIへの頼み方24選</h2><p>AIに仕事を頼むとき、文章や画像を直すとき、作業を進めるとき。いま困っていることに合う一言から使ってみてください。</p><a href="/aoi-writing-room/library/ai-prompts/">記事を読む →</a></div></div>
         </section>
 
         <section className="latest-update" aria-labelledby="latest-update">

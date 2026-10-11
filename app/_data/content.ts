@@ -46,6 +46,23 @@ export const categories = [
   },
 ] as const;
 
+export const kindleCategoryUpdate = {
+  number: "06",
+  slug: "kindle-category-tool",
+  href: "https://brain-market.com/u/pokopen8866/a/byMDN5YjMgoTZsNWa0JXY?free_pass=tKjkyNcBVpPp6WYAgRlAew",
+  title: "【ベストセラーを狙え】Kindleカテゴリ検索ツール作りました！",
+  summary:
+    "本の内容に合うカテゴリを探し、カテゴリ1位の本のKindleストア全体の順位や、KDPで選ぶ項目の候補を調べられます。新刊のカテゴリ選びにも、既刊のカテゴリの見直しにも使えます。",
+  originLabel: "本教材の購入者は追加料金なし",
+  primaryCategory: "出版前・KDP",
+  categoryId: "publish",
+  tags: ["出版後に育てる"],
+  chapters: "第6章〜第8章",
+  verified: "2026年10月",
+  environment: "Kindleカテゴリ選びツール／Webブラウザ",
+  status: "購入者向け無料閲覧リンクで提供",
+} as const;
+
 export const articles = [
   {
     number: "01",
@@ -126,6 +143,7 @@ export const articles = [
     environment: "文章・画像制作などでのAIとのやり取り",
     status: "現在も使用中",
   },
+  kindleCategoryUpdate,
 ] as const;
 
 export const downloads = [
