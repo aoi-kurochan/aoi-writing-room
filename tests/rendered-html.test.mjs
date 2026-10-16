@@ -2,6 +2,32 @@ import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
+test("monthly pages preserve six articles, eight resources and legacy anchors", async () => {
+  for (const path of ["/", "/library"]) {
+    const html = await (await render(path)).text();
+    assert.deepEqual([...html.matchAll(/data-article="([^"]+)"/g)].map((m) => m[1]), [
+      "kindle-category-tool", "ai-prompts", "writing-to-youtube", "codex-book-rewrite",
+      "ai-voice-before-after", "longform-with-codex",
+    ]);
+    for (const month of ["2026-10", "2026-09", "2026-08", "2026-07"]) {
+      assert.match(html, new RegExp(`id="month-${month}"`));
+    }
+    for (let n = 1; n <= 8; n++) assert.match(html, new RegExp(`id="resource-0${n}"`));
+  }
+  const home = await (await render("/")).text();
+  for (const id of ["kindle-category-update", "ai-prompts-update", "latest-update", "new-articles", "category-library", "downloads"]) {
+    assert.match(home, new RegExp(`id="${id}"`));
+  }
+  const library = await (await render("/library")).text();
+  for (const id of ["planning", "structure", "drafting", "voice", "review", "publish", "grow", "upcoming-categories"]) {
+    assert.match(library, new RegExp(`id="${id}"`));
+  }
+  const resources = await (await render("/resources")).text();
+  for (let n = 1; n <= 8; n++) assert.match(resources, new RegExp(`id="resource-0${n}"`));
+  const prompts = await readFile(new URL("../out/library/ai-prompts/index.html", import.meta.url), "utf8");
+  assert.match(prompts, /いま実際に使っている、AIへの頼み方24選/);
+});
+
 async function render(path = "/") {
   const relativePath =
     path === "/"
@@ -18,7 +44,7 @@ async function render(path = "/") {
 
 for (const [path, expected] of [
   ["/", "あおい執筆室"],
-  ["/library", "追加実践記事を、制作工程から探す"],
+  ["/library", "月別の更新内容"],
   ["/resources", "原稿制作で使えるテンプレート"],
   ["/library/longform-with-codex", "AIで長文原稿を1冊仕上げる、現在の制作フロー"],
   ["/library/ai-voice-before-after", "あおいの原稿ビフォー・アフター"],
@@ -85,17 +111,17 @@ test("shows the latest update and direct action links", async () => {
 
   assert.match(html, /購入者限定・本編アップデート/);
   assert.match(html, /毎月25万円の印税が振り込まれるまでにやったこと、全部書きました/);
-  assert.match(html, /最新アップデート/);
+  assert.match(html, /最新の更新/);
   assert.match(html, /書いた文章を、YouTube動画に変える方法/);
-  assert.match(html, /Brainの無料公開記事を読む/);
+  assert.match(html, /2026年9月/);
   assert.match(
     html,
     /https:\/\/brain-market\.com\/u\/pokopen8866\/a\/bykDM0YjMgoTZsNWa0JXY\?free_pass=5K2HHAOG56k6D-r-m7avuQ/,
   );
   assert.match(html, /AIで長文原稿を1冊仕上げる、現在の制作フロー/);
-  assert.match(html, /これまでの実践記事/);
+  assert.match(html, /これまでの更新/);
   assert.match(library, /書いた文章を、YouTube動画に変える方法/);
-  assert.match(library, /Brainで無料公開中/);
+  assert.match(library, /free_pass=5K2HHAOG56k6D-r-m7avuQ/);
   assert.match(library, /1年前の本を、今の基準でリライトする。Codex活用術/);
   assert.doesNotMatch(html, /今回追加した2つの記事/);
   assert.doesNotMatch(html, /迷ったら、この順番で進んでください/);
