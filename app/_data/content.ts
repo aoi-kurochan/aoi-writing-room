@@ -144,6 +144,21 @@ export const articles = [
     status: "現在も使用中",
   },
   kindleCategoryUpdate,
+  {
+    number: "07",
+    slug: "note-writing-set",
+    href: "https://brain-market.com/u/pokopen8866/a/bxcjMwcjMgoTZsNWa0JXY?free_pass=DlU7FpkbHjmNb7dNfUko2w",
+    title: "【Claude Codeでnoteを量産】5分で1記事を仕上げるAI執筆セット作りました！",
+    summary: "自分の原稿やメモから、Claude Code・Codexでnoteの記事を作る方法を、実演動画・執筆ルールの見本・自分用テンプレート付きで紹介します。",
+    originLabel: "本教材の購入者は追加料金なし",
+    primaryCategory: "出版後に育てる",
+    categoryId: "grow",
+    tags: ["本文を書く"],
+    chapters: "第10章",
+    verified: "2026年10月",
+    environment: "Claude CodeまたはCodex",
+    status: "購入者向け無料閲覧リンクで提供",
+  },
 ] as const;
 
 export const downloads = [

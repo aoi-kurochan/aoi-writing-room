@@ -8,6 +8,7 @@ export const articleMonths: Record<string, string> = {
   "writing-to-youtube": "2026-09",
   "ai-prompts": "2026-09",
   "kindle-category-tool": "2026-10",
+  "note-writing-set": "2026-10",
 };
 export const articleResources: Record<string, readonly string[]> = {
   "longform-with-codex": ["01", "02", "03", "04", "05", "06", "07"],
