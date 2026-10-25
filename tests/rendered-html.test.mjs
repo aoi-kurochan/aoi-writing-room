@@ -2,11 +2,11 @@ import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
-test("monthly pages preserve six articles, eight resources and legacy anchors", async () => {
+test("monthly pages preserve eight articles, eight resources and legacy anchors", async () => {
   for (const path of ["/", "/library"]) {
     const html = await (await render(path)).text();
     assert.deepEqual([...html.matchAll(/data-article="([^"]+)"/g)].map((m) => m[1]), [
-      "kindle-category-tool", "ai-prompts", "writing-to-youtube", "codex-book-rewrite",
+      "paperback-production-kit", "note-writing-set", "kindle-category-tool", "ai-prompts", "writing-to-youtube", "codex-book-rewrite",
       "ai-voice-before-after", "longform-with-codex",
     ]);
     for (const month of ["2026-10", "2026-09", "2026-08", "2026-07"]) {

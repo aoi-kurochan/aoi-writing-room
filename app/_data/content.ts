@@ -159,6 +159,21 @@ export const articles = [
     environment: "Claude CodeまたはCodex",
     status: "購入者向け無料閲覧リンクで提供",
   },
+  {
+    number: "08",
+    slug: "paperback-production-kit",
+    href: "https://brain-market.com/u/pokopen8866/a/b5cjMxcjMgoTZsNWa0JXY?free_pass=7m9QSnwa6zYVLPrBOOuu1A",
+    title: "【Kindle本を紙の本に】本文・表紙をAIと直して、申請用PDFまで作るペーパーバック制作キット",
+    summary: "横書きWord原稿と電子書籍の表紙から、AIと紙の本の本文・表紙を整え、KDP申請用PDFまで作る方法を紹介します。制作指示ファイル・修正依頼文26項目・表紙サンプル30案付きです。",
+    originLabel: "本教材の購入者は追加料金なし",
+    primaryCategory: "出版・申請する",
+    categoryId: "publish",
+    tags: ["編集・レビューする"],
+    chapters: "第6章",
+    verified: "2026年10月",
+    environment: "Mac／ChatGPT Work・Microsoft Word",
+    status: "購入者向け無料閲覧リンクで提供",
+  },
 ] as const;
 
 export const downloads = [
